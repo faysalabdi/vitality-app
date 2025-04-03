@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
@@ -14,7 +15,7 @@ const slides = [
       label: 'Contact Us Today',
       url: '/contact-us'
     },
-    gradientClass: 'bg-gradient-to-r from-blue-600 to-purple-600',
+    image: '/friends-having-fun-together.jpg',
   },
   {
     id: 2,
@@ -25,7 +26,7 @@ const slides = [
       label: 'Read About Us',
       url: '/about-us'
     },
-    gradientClass: 'bg-gradient-to-r from-green-600 to-blue-500',
+    image: '/front-view-woman-girl-couch.jpg',
   },
   {
     id: 3,
@@ -36,7 +37,7 @@ const slides = [
       label: 'Referral',
       url: '/referral'
     },
-    gradientClass: 'bg-gradient-to-r from-purple-600 to-pink-500',
+    image: '/side-view-people-working-office.jpg',
   }
 ];
 
@@ -65,7 +66,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-[600px] md:h-[650px] overflow-hidden">
+    <section className="relative h-[550px] md:h-[600px] overflow-hidden z-10">
       {/* Slides */}
       <AnimatePresence mode="wait">
         <motion.div 
@@ -74,13 +75,21 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className={`relative h-full w-full ${slides[currentSlide].gradientClass}`}
+          className="relative h-full w-full"
         >
-          {/* Pattern overlay for visual interest */}
-          <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiPjwvcmVjdD4KPC9zdmc+')]"></div>
+          {/* Image Background */}
+          <div className="absolute inset-0 -top-2">
+            <Image 
+              src={slides[currentSlide].image} 
+              alt={slides[currentSlide].title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/45"></div>
           
           {/* Content */}
           <div className="absolute inset-0 flex items-center px-8 md:px-16 lg:px-24">
@@ -98,7 +107,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-200 mb-6"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-green mb-6"
                 >
                   {slides[currentSlide].subtitle}
                 </motion.h2>
@@ -117,7 +126,7 @@ const Hero = () => {
                 >
                   <Link 
                     href={slides[currentSlide].action.url} 
-                    className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg"
+                    className="bg-brand-blue hover:bg-brand-blue/90 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg"
                   >
                     {slides[currentSlide].action.label}
                   </Link>
@@ -131,7 +140,7 @@ const Hero = () => {
       {/* Navigation arrows */}
       <button 
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition z-10"
         aria-label="Previous slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -140,7 +149,7 @@ const Hero = () => {
       </button>
       <button 
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition z-10"
         aria-label="Next slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -149,7 +158,7 @@ const Hero = () => {
       </button>
       
       {/* Slide indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -157,9 +166,11 @@ const Hero = () => {
               setDirection(index > currentSlide ? 1 : -1);
               setCurrentSlide(index);
             }}
-            className={`w-3 h-3 rounded-full transition-all ${
-              currentSlide === index ? 'bg-blue-300 w-8' : 'bg-white/50'
-            }`}
+            className={`${
+              currentSlide === index 
+                ? 'w-10 h-4 bg-white' 
+                : 'w-4 h-4 bg-white/60 hover:bg-white/80'
+            } rounded-full transition-all duration-300`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
