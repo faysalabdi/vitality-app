@@ -5,6 +5,21 @@ import Testimonials from "@/components/sections/Testimonials";
 import ContactForm from "@/components/common/ContactForm";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from 'next';
+import { LocalBusinessStructuredData, FAQStructuredData } from "@/components/common/StructuredData";
+
+// Define metadata for the homepage
+export const metadata: Metadata = {
+  title: 'Vitality Community Care | NDIS & Aged Care Provider in Melbourne',
+  description: 'Vitality Community Care offers personalized NDIS, aged care, and allied health services in Melbourne. Expert support for daily living, community participation, and mental health.',
+  keywords: [
+    'NDIS provider Melbourne', 
+    'aged care services Victoria', 
+    'disability support Australia', 
+    'community care Melbourne',
+    'mental health services NDIS'
+  ],
+};
 
 export default function Home() {
   return (
@@ -12,10 +27,10 @@ export default function Home() {
       <Hero />
 
       {/* Introduction */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white" aria-labelledby="introduction-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Vitality Community Care</h1>
+            <h1 id="introduction-heading" className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Vitality Community Care</h1>
             <p className="text-lg text-gray-600 mb-6">
               From personalised care plans to compassionate, skilled professionals, we're committed to understanding and meeting your unique needs.
             </p>
@@ -35,11 +50,11 @@ export default function Home() {
       </section>
 
       {/* Referral CTA */}
-      <section className="py-12 bg-blue-600 text-white">
+      <section className="py-12 bg-blue-600 text-white" aria-labelledby="referral-heading">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Ready to Refer?</h2>
+              <h2 id="referral-heading" className="text-2xl md:text-3xl font-bold mb-2">Ready to Refer?</h2>
               <p className="text-lg text-blue-100">Submit Participant Details Here.</p>
             </div>
             <Link 
@@ -56,11 +71,11 @@ export default function Home() {
       <Services />
 
       {/* Person-centric section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white" aria-labelledby="person-centric-heading">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2 order-2 lg:order-1">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Person-Centric Mental Health Solutions</h2>
+              <h2 id="person-centric-heading" className="text-3xl font-bold text-gray-800 mb-4">Person-Centric Mental Health Solutions</h2>
               <p className="text-gray-600 mb-6">
                 At Vitality Community Care, our commitment to person-centric care is the heartbeat of our services. We believe that each individual is unique, with distinct needs, preferences, and aspirations. Our approach is not just about providing care; it's about understanding the goals of every person we serve. We tailor our services to enrich the dignity, independence, and individuality of each client.
               </p>
@@ -80,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* Supporting independence section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" aria-labelledby="independence-heading">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
@@ -91,7 +106,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Supporting Your Journey To Independence</h2>
+              <h2 id="independence-heading" className="text-3xl font-bold text-gray-800 mb-4">Supporting Your Journey To Independence</h2>
               <p className="text-gray-600 mb-6">
                 At Vitality Community Care, we understand that life is busy. That's why we offer flexible scheduling options to fit your needs. Whether you prefer weekdays or weekends, day or evening, we've got you covered. Our goal is to make your driving education as convenient as possible.
               </p>
@@ -107,10 +122,10 @@ export default function Home() {
       <Features />
 
       {/* Experience the difference */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" aria-labelledby="experience-heading">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Experience The Vitality Difference</h2>
+            <h2 id="experience-heading" className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Experience The Vitality Difference</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Discover unparalleled care that goes beyond the basics. At Vitality Community Care, we treat every individual like family, offering personalized services that enrich lives. Feel the difference a compassionate and dedicated team can make.
             </p>
@@ -206,17 +221,19 @@ export default function Home() {
       <Testimonials />
 
       {/* Contact section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white" aria-labelledby="contact-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto">
+            <h2 id="contact-heading" className="text-3xl font-bold text-center text-gray-800 mb-8">Get in Touch</h2>
             <ContactForm />
           </div>
         </div>
       </section>
 
       {/* Certifications */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 bg-gray-100" aria-labelledby="certifications-heading">
         <div className="container mx-auto px-4">
+          <h2 id="certifications-heading" className="text-2xl font-bold text-center text-gray-800 mb-8">Our Certifications</h2>
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             <div className="w-24 h-24 flex items-center justify-center bg-white p-4 rounded-lg shadow-sm">
               <div className="text-blue-600 font-bold text-lg">NDIS</div>
@@ -232,11 +249,11 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-12 bg-blue-600 text-white">
+      <section className="py-12 bg-blue-600 text-white" aria-labelledby="final-cta-heading">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Get Your Custom Care Plan, Contact Us Today!</h2>
+              <h2 id="final-cta-heading" className="text-2xl md:text-3xl font-bold mb-2">Get Your Custom Care Plan, Contact Us Today!</h2>
             </div>
             <Link 
               href="/contact-us" 
@@ -247,6 +264,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Add structured data for SEO */}
+      <LocalBusinessStructuredData />
+      
+      {/* Add FAQ structured data */}
+      <FAQStructuredData 
+        questions={[
+          {
+            question: "What NDIS services does Vitality Community Care offer?",
+            answer: "Vitality Community Care offers a comprehensive range of NDIS services including daily living support, community participation, accommodation services, transport assistance, support coordination, cleaning services, and early childhood intervention."
+          },
+          {
+            question: "How do I get started with your aged care services?",
+            answer: "Getting started with our aged care services is simple. Contact us via phone, email, or through our online form. We'll arrange a free consultation to discuss your needs, develop a personalized care plan, and guide you through funding options like Home Care Packages or CHSP."
+          },
+          {
+            question: "Are your staff trained and qualified?",
+            answer: "Yes, all our staff are thoroughly screened, trained, and qualified. They undergo comprehensive background checks, hold relevant certifications, and receive ongoing professional development to ensure they provide the highest standard of care."
+          },
+          {
+            question: "How can I refer someone to your services?",
+            answer: "You can refer someone to our services by completing our online referral form, calling our referral line at 1300 395 852, or emailing referrals@vitalitycommunitycare.com.au with the participant's details. We'll respond promptly to process the referral."
+          },
+          {
+            question: "Does Vitality Community Care work with NDIS self-managed participants?",
+            answer: "Yes, we happily work with self-managed NDIS participants, providing flexibility and choice in how services are delivered. We can provide detailed invoices for your records and work directly with you to ensure your funding is maximized effectively."
+          }
+        ]} 
+      />
     </>
   );
 }

@@ -1,5 +1,26 @@
 import Link from 'next/link';
 import ContactForm from '@/components/common/ContactForm';
+import { Metadata } from 'next';
+import { LocalBusinessStructuredData } from '@/components/common/StructuredData';
+
+// Define metadata for this page
+export const metadata: Metadata = {
+  title: 'Contact Us | Vitality Community Care',
+  description: 'Get in touch with Vitality Community Care. Contact us for NDIS and aged care services in Melbourne, Victoria. Phone: 1300 395 852.',
+  openGraph: {
+    title: 'Contact Vitality Community Care | NDIS & Aged Care Provider',
+    description: 'Reach out to our team for personalized care services. Multiple ways to contact us - phone, email, or visit our Melbourne office.',
+    url: 'https://vitalitycommunitycare.com.au/contact-us',
+    images: [
+      {
+        url: '/images/contact-us-og.jpg', // Replace with actual image when available
+        width: 1200,
+        height: 630,
+        alt: 'Vitality Community Care contact information',
+      },
+    ],
+  },
+};
 
 export default function ContactUsPage() {
   return (
@@ -22,7 +43,7 @@ export default function ContactUsPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Phone</h3>
               <p className="text-gray-600 mb-2">For quick assistance:</p>
-              <p className="text-blue-600 font-semibold text-lg">+61 123 456 789</p>
+              <p className="text-blue-600 font-semibold text-lg">+61 1300 395 852</p>
               <p className="text-gray-500 text-sm mt-2">Available Monday to Friday, 9am - 5pm AEST</p>
             </div>
             
@@ -102,6 +123,26 @@ export default function ContactUsPage() {
           </div>
         </div>
       </div>
+
+      {/* Add structured data for the contact page */}
+      <LocalBusinessStructuredData 
+        name="Vitality Community Care"
+        description="Contact Vitality Community Care for NDIS and aged care services in Melbourne, Victoria. Our team is available via phone, email, or in-person at our Melbourne office."
+        url="https://vitalitycommunitycare.com.au/contact-us"
+        telephone="+61 1300 395 852"
+        address={{
+          streetAddress: "123 Community Street",
+          addressLocality: "Melbourne",
+          addressRegion: "VIC",
+          postalCode: "3000",
+          addressCountry: "AU",
+        }}
+        openingHours={[
+          "Monday-Friday 09:00-17:00",
+          "Saturday 10:00-14:00",
+          "Sunday Closed",
+        ]}
+      />
     </div>
   );
 } 
