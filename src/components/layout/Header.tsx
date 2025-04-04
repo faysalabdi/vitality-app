@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaPhone, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 
 interface HeaderProps {
   isFixed?: boolean;
@@ -72,13 +72,19 @@ const Header = ({ isFixed = false }: HeaderProps) => {
               <li><Link href="/" className="text-gray-700 hover:text-brand-green font-medium">Home</Link></li>
               <li><Link href="/about-us" className="text-gray-700 hover:text-brand-green font-medium">About Us</Link></li>
               <li className="relative group">
-                <Link href="/ndis" className="text-gray-700 hover:text-brand-green font-medium">NDIS</Link>
+                <Link href="/ndis" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                  NDIS
+                  <FaChevronDown className="ml-1 text-xs" />
+                </Link>
                 <div className="absolute left-0 top-full pt-3 group-hover:block hidden">
                   <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52">
                     <li className="py-1"><Link href="/ndis/daily-living" className="text-gray-700 hover:text-brand-blue block">Daily Living</Link></li>
                     <li className="py-1"><Link href="/ndis/community-participation" className="text-gray-700 hover:text-brand-blue block">Community Participation</Link></li>
                     <li className="py-1 relative group/sub">
-                      <Link href="/ndis/accommodation" className="text-gray-700 hover:text-brand-blue block">Accommodation</Link>
+                      <Link href="/ndis/accommodation" className="text-gray-700 hover:text-brand-blue block flex items-center justify-between">
+                        Accommodation
+                        <FaChevronDown className="ml-1 text-xs transform -rotate-90" />
+                      </Link>
                       <div className="absolute left-full top-0 pl-2 hidden group-hover/sub:block">
                         <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52">
                           <li className="py-1"><Link href="/ndis/accommodation/sil" className="text-gray-700 hover:text-brand-blue block">Supported Independent Living (SIL)</Link></li>
@@ -94,7 +100,10 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                 </div>
               </li>
               <li className="relative group">
-                <Link href="/aged-care" className="text-gray-700 hover:text-brand-green font-medium">Aged Care</Link>
+                <Link href="/aged-care" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                  Aged Care
+                  <FaChevronDown className="ml-1 text-xs" />
+                </Link>
                 <div className="absolute left-0 top-full pt-3 group-hover:block hidden">
                   <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52">
                     <li className="py-1"><Link href="/aged-care/home-care-package" className="text-gray-700 hover:text-brand-blue block">Home Care Package</Link></li>
@@ -104,7 +113,10 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                 </div>
               </li>
               <li className="relative group">
-                <Link href="/allied-health" className="text-gray-700 hover:text-brand-green font-medium">Allied Health</Link>
+                <Link href="/allied-health" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                  Allied Health
+                  <FaChevronDown className="ml-1 text-xs" />
+                </Link>
                 <div className="absolute left-0 top-full pt-3 group-hover:block hidden">
                   <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52">
                     <li className="py-1"><Link href="/allied-health/physiotherapy" className="text-gray-700 hover:text-brand-blue block">Physiotherapy</Link></li>
@@ -129,13 +141,19 @@ const Header = ({ isFixed = false }: HeaderProps) => {
             <li><Link href="/about-us" className="text-gray-700 hover:text-brand-green font-medium block py-2">About Us</Link></li>
             <li>
               <div className="flex flex-col">
-                <Link href="/ndis" className="text-gray-700 hover:text-brand-green font-medium block py-2">NDIS</Link>
+                <div className="flex items-center justify-between py-2">
+                  <Link href="/ndis" className="text-gray-700 hover:text-brand-green font-medium">NDIS</Link>
+                  <FaChevronDown className="text-xs text-gray-600" />
+                </div>
                 <ul className="pl-4 mt-2 space-y-2">
                   <li><Link href="/ndis/daily-living" className="text-gray-700 hover:text-brand-blue block py-1">Daily Living</Link></li>
                   <li><Link href="/ndis/community-participation" className="text-gray-700 hover:text-brand-blue block py-1">Community Participation</Link></li>
                   <li>
                     <div className="flex flex-col">
-                      <Link href="/ndis/accommodation" className="text-gray-700 hover:text-brand-blue block py-1">Accommodation</Link>
+                      <div className="flex items-center justify-between py-1">
+                        <Link href="/ndis/accommodation" className="text-gray-700 hover:text-brand-blue">Accommodation</Link>
+                        <FaChevronDown className="text-xs text-gray-600" />
+                      </div>
                       <ul className="pl-4 mt-1 space-y-1">
                         <li><Link href="/ndis/accommodation/sil" className="text-gray-700 hover:text-brand-blue block py-1">Supported Independent Living (SIL)</Link></li>
                         <li><Link href="/ndis/accommodation/respite-care" className="text-gray-700 hover:text-brand-blue block py-1">Respite Care / STA</Link></li>
@@ -151,7 +169,10 @@ const Header = ({ isFixed = false }: HeaderProps) => {
             </li>
             <li>
               <div className="flex flex-col">
-                <Link href="/aged-care" className="text-gray-700 hover:text-brand-green font-medium block py-2">Aged Care</Link>
+                <div className="flex items-center justify-between py-2">
+                  <Link href="/aged-care" className="text-gray-700 hover:text-brand-green font-medium">Aged Care</Link>
+                  <FaChevronDown className="text-xs text-gray-600" />
+                </div>
                 <ul className="pl-4 mt-2 space-y-2">
                   <li><Link href="/aged-care/home-care-package" className="text-gray-700 hover:text-brand-blue block py-1">Home Care Package</Link></li>
                   <li><Link href="/aged-care/chsp" className="text-gray-700 hover:text-brand-blue block py-1">CHSP</Link></li>
@@ -161,7 +182,10 @@ const Header = ({ isFixed = false }: HeaderProps) => {
             </li>
             <li>
               <div className="flex flex-col">
-                <Link href="/allied-health" className="text-gray-700 hover:text-brand-green font-medium block py-2">Allied Health</Link>
+                <div className="flex items-center justify-between py-2">
+                  <Link href="/allied-health" className="text-gray-700 hover:text-brand-green font-medium">Allied Health</Link>
+                  <FaChevronDown className="text-xs text-gray-600" />
+                </div>
                 <ul className="pl-4 mt-2 space-y-2">
                   <li><Link href="/allied-health/physiotherapy" className="text-gray-700 hover:text-brand-blue block py-1">Physiotherapy</Link></li>
                   <li><Link href="/allied-health/behaviour-support" className="text-gray-700 hover:text-brand-blue block py-1">Behaviour Support</Link></li>

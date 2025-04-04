@@ -22,6 +22,7 @@ import { ServicesSection } from '@/components/sections/ServicesSection';
 import { ReferralCTA } from '@/components/sections/ReferralCTA';
 import { BenefitsSection } from '@/components/sections/BenefitsSection';
 import { CertificationsSection } from '@/components/sections/CertificationsSection';
+import { ContactForm } from '@/components/sections/ContactForm';
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <ReferralCTA />
       <BenefitsSection />
       <CertificationsSection />
+      <ContactForm />
     </>
   );
 }
