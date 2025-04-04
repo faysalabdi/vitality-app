@@ -5,7 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 
-const Header = () => {
+interface HeaderProps {
+  isFixed?: boolean;
+}
+
+const Header = ({ isFixed = false }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md relative z-50">
+    <header className={`w-full bg-white shadow-md relative z-50 ${isFixed ? 'fixed top-0 left-0 right-0' : ''}`}>
       <div className="container mx-auto px-4">
         {/* Top bar with contact info */}
         <div className="flex flex-col md:flex-row justify-between items-center py-1 border-b">
