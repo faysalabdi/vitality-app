@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaArrowRight } from 'react-icons/fa';
 
 const slides = [
   {
@@ -126,9 +127,10 @@ const Hero = () => {
                 >
                   <Link 
                     href={slides[currentSlide].action.url} 
-                    className="bg-brand-blue hover:bg-brand-blue/90 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg"
+                    className="inline-flex items-center bg-brand-blue hover:bg-brand-green text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:scale-105 hover:shadow-xl"
                   >
-                    {slides[currentSlide].action.label}
+                    <span>{slides[currentSlide].action.label}</span>
+                    <FaArrowRight className="ml-2 text-sm" />
                   </Link>
                 </motion.div>
               </div>
