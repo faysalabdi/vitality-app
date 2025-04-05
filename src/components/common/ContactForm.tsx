@@ -7,29 +7,9 @@ type FormData = {
   name: string;
   phone: string;
   email: string;
-  service: string;
   location: string;
   message: string;
 };
-
-const serviceOptions = [
-  'Daily Living Support',
-  'Community Participation',
-  'Accommodation',
-  'Transport',
-  'Support Coordination',
-  'Cleaning',
-  'Early Childhood',
-  'Home Care Package',
-  'CHSP',
-  'Private Care',
-  'Physiotherapy',
-  'Behaviour Support',
-  'Psychology',
-  'Rehabilitation Counselling',
-  'Dietitian',
-  'Other'
-];
 
 const locationOptions = ['VIC', 'NSW', 'QLD', 'SA', 'WA'];
 
@@ -90,7 +70,7 @@ const ContactForm = () => {
         </div>
       )}
       
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <input
             type="text"
@@ -130,34 +110,21 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <select
-            className={`w-full p-3 border rounded-md bg-white ${errors.service ? 'border-red-500' : 'border-gray-300'}`}
-            {...register('service', { required: true })}
-            defaultValue=""
-          >
-            <option value="" disabled>Select Service:</option>
-            {serviceOptions.map((service, index) => (
-              <option key={index} value={service}>
-                {service}
-              </option>
-            ))}
-          </select>
-          {errors.service && <span className="text-red-500 text-sm">Please select a service</span>}
-        </div>
-        
-        <div>
-          <select
-            className={`w-full p-3 border rounded-md bg-white ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
-            {...register('location', { required: true })}
-            defaultValue=""
-          >
-            <option value="" disabled>Your Location:</option>
+          <div className="mb-2">Your Location:</div>
+          <div className="flex flex-wrap gap-4">
             {locationOptions.map((location, index) => (
-              <option key={index} value={location}>
-                {location}
-              </option>
+              <div key={index} className="flex items-center">
+                <input
+                  type="radio"
+                  id={`location-${location}`}
+                  value={location}
+                  className="mr-2 h-4 w-4 accent-[#39A9E0]"
+                  {...register('location', { required: true })}
+                />
+                <label htmlFor={`location-${location}`} className="text-gray-700">{location}</label>
+              </div>
             ))}
-          </select>
+          </div>
           {errors.location && <span className="text-red-500 text-sm">Please select your location</span>}
         </div>
         
@@ -174,7 +141,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition duration-300 disabled:opacity-70"
+          className="w-full bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg text-white font-semibold py-3 px-4 rounded-md transition duration-300 disabled:opacity-70"
         >
           {isSubmitting ? 'Sending...' : 'Send Your Message'}
         </button>
