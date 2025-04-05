@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { LocalBusinessStructuredData } from '@/components/common/StructuredData';
+import { FaArrowRight } from 'react-icons/fa';
 
 // Define metadata for this page
 export const metadata: Metadata = {
@@ -23,14 +25,35 @@ export const metadata: Metadata = {
 
 export default function AboutUsPage() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative bg-blue-600 text-white py-16">
-        <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiPjwvcmVjdD4KPC9zdmc+')]"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">About Vitality Community Care</h1>
-            <p className="text-lg text-blue-100">
+      <section className="relative h-[400px] overflow-hidden">
+        <Image 
+          src="/side-view-people-working-office.jpg" 
+          alt="About Vitality Community Care" 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+              About Us
+            </h1>
+            <h2 
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block'
+              }}
+            >
+              Our Story & Values
+            </h2>
+            <p className="text-white text-base md:text-lg max-w-2xl">
               Empowering individuals to live their best lives through compassionate and personalized care.
             </p>
           </div>
@@ -38,11 +61,11 @@ export default function AboutUsPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Our Story</h2>
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="bg-gray-50 p-8 rounded-lg shadow-md">
               <p className="text-gray-600 mb-6">
                 Vitality Community Care was founded with a simple yet powerful vision: to create a care service that truly puts people first. Our journey began when our founders recognized a gap in the healthcare system – many existing services were focused on delivering standardized care, often overlooking the unique needs and preferences of individuals.
               </p>
@@ -58,13 +81,24 @@ export default function AboutUsPage() {
       </section>
 
       {/* Mission and Values */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Mission & Values</h2>
           
           <div className="mb-16">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-4">Our Mission</h3>
+              <h3 
+                className="text-2xl font-semibold mb-4"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline-block'
+                }}
+              >
+                Our Mission
+              </h3>
               <p className="text-lg text-gray-600">
                 To empower individuals to live their best lives by providing compassionate, personalized care that respects their dignity, celebrates their uniqueness, and helps them achieve their personal goals.
               </p>
@@ -72,9 +106,9 @@ export default function AboutUsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
               </div>
@@ -84,9 +118,9 @@ export default function AboutUsPage() {
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
               </div>
@@ -96,9 +130,9 @@ export default function AboutUsPage() {
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                 </svg>
               </div>
@@ -108,9 +142,9 @@ export default function AboutUsPage() {
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                 </svg>
               </div>
@@ -120,9 +154,9 @@ export default function AboutUsPage() {
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
               </div>
@@ -132,9 +166,9 @@ export default function AboutUsPage() {
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
@@ -148,45 +182,66 @@ export default function AboutUsPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Leadership Team</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-gray-300 rounded-full overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl font-bold">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">
                   JD
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-1">Jane Doe</h3>
-              <p className="text-blue-600 mb-4">Founder & CEO</p>
+              <p className="mb-4" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+                fontWeight: 'bold'
+              }}>Founder & CEO</p>
               <p className="text-gray-600 mb-4">
                 With over 20 years of experience in healthcare management, Jane founded Vitality Community Care with a vision to transform care services through a person-centered approach.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-gray-300 rounded-full overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl font-bold">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">
                   JS
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-1">John Smith</h3>
-              <p className="text-blue-600 mb-4">Clinical Director</p>
+              <p className="mb-4" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+                fontWeight: 'bold'
+              }}>Clinical Director</p>
               <p className="text-gray-600 mb-4">
                 John brings his extensive background as a registered nurse and healthcare administrator to ensure our clinical practices meet the highest standards of care.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-gray-300 rounded-full overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl font-bold">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">
                   SC
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-1">Sarah Chen</h3>
-              <p className="text-blue-600 mb-4">NDIS Services Manager</p>
+              <p className="mb-4" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+                fontWeight: 'bold'
+              }}>NDIS Services Manager</p>
               <p className="text-gray-600 mb-4">
                 Sarah specializes in NDIS service delivery and has dedicated her career to advocating for the rights and needs of people with disabilities.
               </p>
@@ -196,44 +251,83 @@ export default function AboutUsPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Certifications & Accreditations</h2>
           
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            <div className="w-40 h-40 flex items-center justify-center bg-gray-50 p-4 rounded-lg shadow-sm">
-              <div className="text-blue-600 font-bold text-xl text-center">NDIS Registered Provider</div>
+            <div className="w-40 h-40 flex items-center justify-center bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2">
+              <div 
+                className="font-bold text-xl text-center"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #39A9E0)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}
+              >
+                NDIS Registered Provider
+              </div>
             </div>
-            <div className="w-40 h-40 flex items-center justify-center bg-gray-50 p-4 rounded-lg shadow-sm">
-              <div className="text-green-600 font-bold text-xl text-center">Aged Care Quality Standards Certified</div>
+            <div className="w-40 h-40 flex items-center justify-center bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2">
+              <div 
+                className="font-bold text-xl text-center"
+                style={{ 
+                  background: 'linear-gradient(90deg, #8BC53F, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}
+              >
+                Aged Care Quality Standards Certified
+              </div>
             </div>
-            <div className="w-40 h-40 flex items-center justify-center bg-gray-50 p-4 rounded-lg shadow-sm">
-              <div className="text-purple-600 font-bold text-xl text-center">ISO 9001 Quality Management</div>
+            <div className="w-40 h-40 flex items-center justify-center bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2">
+              <div 
+                className="font-bold text-xl text-center"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}
+              >
+                ISO 9001 Quality Management
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="py-12 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image 
+            src="/friends-having-fun-together.jpg" 
+            alt="Experience the Vitality difference" 
+            fill
+            className="object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Experience the Vitality Difference?</h2>
-            <p className="text-lg text-blue-100 mb-8">
+            <p className="text-lg mb-8">
               Contact us today to discuss how we can support you or your loved one with compassionate, personalized care.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 href="/contact-us" 
-                className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300"
+                className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
               >
-                Contact Us
+                Contact Us <FaArrowRight className="ml-2" />
               </Link>
               <Link 
                 href="/referral" 
-                className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300"
+                className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
               >
-                Make a Referral
+                Make a Referral <FaArrowRight className="ml-2" />
               </Link>
             </div>
           </div>

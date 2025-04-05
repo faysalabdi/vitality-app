@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ContactForm from '@/components/common/ContactForm';
 import { Metadata } from 'next';
 import { LocalBusinessStructuredData } from '@/components/common/StructuredData';
+import { FaArrowLeft, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 // Define metadata for this page
 export const metadata: Metadata = {
@@ -24,65 +26,125 @@ export const metadata: Metadata = {
 
 export default function ContactUsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="py-16 container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[400px] overflow-hidden">
+        <Image 
+          src="/psychology-support-person-wheelchair-woman-600nw-2167530617.webp" 
+          alt="Contact Vitality Community Care" 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+              Contact Us
+            </h1>
+            <h2 
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block'
+              }}
+            >
+              We're Here To Help
+            </h2>
+            <p className="text-white text-base md:text-lg max-w-2xl">
               We're here to help with any questions you might have about our services. Reach out to us through any of the methods below.
             </p>
           </div>
-          
+        </div>
+      </section>
+      
+      <div className="py-16 container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+            <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
+                <FaPhone className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Phone</h3>
               <p className="text-gray-600 mb-2">For quick assistance:</p>
-              <p className="text-blue-600 font-semibold text-lg">+61 1300 395 852</p>
+              <p className="font-semibold text-lg" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+              }}>+61 1300 395 852</p>
               <p className="text-gray-500 text-sm mt-2">Available Monday to Friday, 9am - 5pm AEST</p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+            <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#8BC53F]/10 text-[#8BC53F] mb-4">
+                <FaEnvelope className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
               <p className="text-gray-600 mb-2">Send us a message:</p>
-              <p className="text-blue-600 font-semibold text-lg">info@vitalitycommunitycare.com.au</p>
+              <p className="font-semibold text-lg" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+              }}>info@vitalitycommunitycare.com.au</p>
               <p className="text-gray-500 text-sm mt-2">We'll respond within 24 hours</p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
+                <FaMapMarkerAlt className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Office</h3>
               <p className="text-gray-600 mb-2">Visit our location:</p>
-              <p className="text-blue-600 font-semibold text-lg">123 Community Street, Melbourne VIC 3000, Australia</p>
+              <p className="font-semibold text-lg" style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block',
+              }}>123 Community Street, Melbourne VIC 3000, Australia</p>
               <p className="text-gray-500 text-sm mt-2">Open for appointments and walk-ins</p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+              <h3 
+                className="text-2xl font-semibold mb-6"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline-block',
+                }}
+              >
+                Send Us a Message
+              </h3>
               <ContactForm />
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-800 mb-6">Find Us</h3>
-              <div className="h-96 bg-gray-200 rounded-lg overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+              <h3 
+                className="text-2xl font-semibold mb-6"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline-block',
+                }}
+              >
+                Find Us
+              </h3>
+              <div className="h-96 rounded-lg overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] flex items-center justify-center">
                   <div className="text-white text-center p-8">
                     <p className="text-xl font-semibold mb-4">Map will be integrated here</p>
                     <p>123 Community Street, Melbourne VIC 3000, Australia</p>
@@ -113,11 +175,9 @@ export default function ContactUsPage() {
           <div className="text-center mt-12">
             <Link 
               href="/"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg transition duration-300 hover:-translate-y-1"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-              </svg>
+              <FaArrowLeft className="h-5 w-5 mr-2" />
               Back to Home
             </Link>
           </div>
