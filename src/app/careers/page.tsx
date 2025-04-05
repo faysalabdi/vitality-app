@@ -1,0 +1,182 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import { Metadata } from 'next';
+import { FaArrowRight } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Join Our Team | Careers at Vitality Community Care',
+  description: 'Explore career opportunities at Vitality Community Care. Join our team of dedicated professionals providing NDIS, aged care, and allied health services in Melbourne.',
+  keywords: [
+    'NDIS careers', 
+    'aged care jobs', 
+    'disability support careers', 
+    'allied health positions',
+    'healthcare jobs Melbourne'
+  ],
+};
+
+export default function CareersPage() {
+  const careers = [
+    {
+      title: "Support Worker",
+      description: "Join our team of dedicated support workers providing direct care and assistance to our clients. We're looking for compassionate individuals who are committed to enhancing the independence and quality of life of the people we support.",
+      requirements: ["Certificate III in Individual Support or equivalent", "Valid driver's license", "NDIS Worker Screening Check", "First Aid and CPR certification"],
+      color: "#39A9E0"
+    },
+    {
+      title: "Allied Health Professional",
+      description: "We're seeking qualified allied health professionals to join our multidisciplinary team. You'll have the opportunity to make a meaningful difference in the lives of our clients through evidence-based interventions and person-centered care.",
+      requirements: ["Relevant degree qualification", "AHPRA registration (if applicable)", "Experience working with people with disabilities", "Strong communication skills"],
+      color: "#8BC53F"
+    },
+    {
+      title: "Support Coordinator",
+      description: "Help our clients navigate the NDIS and connect with appropriate services. This role requires excellent knowledge of the NDIS and strong relationship-building skills.",
+      requirements: ["Experience in NDIS support coordination", "Knowledge of local service providers", "Strong organizational skills", "Problem-solving abilities"],
+      color: "#39A9E0"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[400px] overflow-hidden">
+        <Image 
+          src="/side-view-people-working-office.jpg" 
+          alt="Careers at Vitality Community Care" 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+              Join Our Team
+            </h1>
+            <h2 
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              style={{ 
+                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline-block'
+              }}
+            >
+              Make a Difference
+            </h2>
+            <p className="text-white text-base md:text-lg max-w-2xl">
+              At Vitality Community Care, we're looking for passionate individuals who share our commitment to providing high-quality, person-centered care.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Work With Us</h2>
+            <p className="text-lg text-gray-600 mb-4">
+              Vitality Community Care is more than just a workplace – it's a community of dedicated professionals who are passionate about making a positive difference in people's lives.
+            </p>
+            <p className="text-lg text-gray-600">
+              We offer competitive salaries, ongoing professional development, flexible working arrangements, and a supportive team environment. Most importantly, we offer the opportunity to do meaningful work that truly matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Current Opportunities */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Current Opportunities</h2>
+          
+          <div className="max-w-5xl mx-auto space-y-8">
+            {careers.map((career, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+                <div className="p-8" style={{ borderLeft: `4px solid ${career.color}` }}>
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: career.color }}>{career.title}</h3>
+                  <p className="text-gray-600 mb-6">{career.description}</p>
+                  
+                  <h4 className="font-semibold text-gray-800 mb-2">Requirements:</h4>
+                  <ul className="list-disc pl-5 mb-6 text-gray-600">
+                    {career.requirements.map((req, i) => (
+                      <li key={i}>{req}</li>
+                    ))}
+                  </ul>
+                  
+                  <Link 
+                    href="/contact-us" 
+                    className="inline-flex items-center font-medium"
+                    style={{ color: career.color }}
+                  >
+                    Apply for this Position <FaArrowRight className="ml-2" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Work With Us</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Meaningful Work</h3>
+              <p className="text-gray-600 text-center">
+                Make a real difference in people's lives every day with work that is truly meaningful and rewarding.
+              </p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Professional Growth</h3>
+              <p className="text-gray-600 text-center">
+                Access ongoing training, mentoring, and career development opportunities to help you grow professionally.
+              </p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Supportive Team</h3>
+              <p className="text-gray-600 text-center">
+                Join a team that values collaboration, respect, and mutual support in achieving our shared mission.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-12 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image 
+            src="/friends-having-fun-together.jpg" 
+            alt="Join Vitality Community Care Team" 
+            fill
+            className="object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Join Our Team?</h2>
+            <p className="text-lg mb-8">
+              We're always looking for talented and passionate individuals. Get in touch with us today to discuss career opportunities.
+            </p>
+            <Link 
+              href="/contact-us" 
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-transparent border-2 border-white hover:bg-white hover:text-[#39A9E0] hover:shadow-lg transition duration-300 hover:-translate-y-1"
+            >
+              Contact Us About Careers <FaArrowRight className="ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+} 

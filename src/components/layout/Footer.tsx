@@ -43,22 +43,22 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-brand-green">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/ndis" className="text-gray-300 hover:text-brand-blue transition">
+                <Link href="/services/ndis" className="text-gray-300 hover:text-brand-blue transition">
                   NDIS
                 </Link>
               </li>
               <li>
-                <Link href="/ndis/accommodation" className="text-gray-300 hover:text-brand-blue transition">
+                <Link href="/services/ndis#accommodation" className="text-gray-300 hover:text-brand-blue transition">
                   Accommodation
                 </Link>
               </li>
               <li>
-                <Link href="/aged-care" className="text-gray-300 hover:text-brand-blue transition">
+                <Link href="/services/aged-care" className="text-gray-300 hover:text-brand-blue transition">
                   Aged Care
                 </Link>
               </li>
               <li>
-                <Link href="/allied-health" className="text-gray-300 hover:text-brand-blue transition">
+                <Link href="/services/allied-health" className="text-gray-300 hover:text-brand-blue transition">
                   Allied Health
                 </Link>
               </li>
