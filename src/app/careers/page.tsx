@@ -1,21 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Metadata } from 'next';
 import { FaArrowRight } from 'react-icons/fa';
-
-export const metadata: Metadata = {
-  title: 'Join Our Team | Careers at Vitality Community Care',
-  description: 'Explore career opportunities at Vitality Community Care. Join our team of dedicated professionals providing NDIS, aged care, and allied health services in Melbourne.',
-  keywords: [
-    'NDIS careers', 
-    'aged care jobs', 
-    'disability support careers', 
-    'allied health positions',
-    'healthcare jobs Melbourne'
-  ],
-};
+import { useState } from 'react';
 
 export default function CareersPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [formError, setFormError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormError('');
+
+    try {
+      // In a real application, you would send this data to your backend
+      // For demo purposes, we'll just simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setSubmitSuccess(true);
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      setFormError('There was a problem submitting your application. Please try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const careers = [
     {
       title: "Support Worker",
@@ -108,7 +122,7 @@ export default function CareersPage() {
                   </ul>
                   
                   <Link 
-                    href="/contact-us" 
+                    href="#application-form" 
                     className="inline-flex items-center font-medium"
                     style={{ color: career.color }}
                   >
@@ -166,14 +180,134 @@ export default function CareersPage() {
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Join Our Team?</h2>
             <p className="text-lg mb-8">
-              We're always looking for talented and passionate individuals. Get in touch with us today to discuss career opportunities.
+              We're always looking for talented and passionate individuals. Fill out the application form below to get started.
             </p>
-            <Link 
-              href="/contact-us" 
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-transparent border-2 border-white hover:bg-white hover:text-[#39A9E0] hover:shadow-lg transition duration-300 hover:-translate-y-1"
-            >
-              Contact Us About Careers <FaArrowRight className="ml-2" />
-            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form Section */}
+      <section id="application-form" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Submit Your Application Today</h2>
+            
+            <div className="bg-gray-50 rounded-lg shadow-md p-8 mt-8">
+              {submitSuccess ? (
+                <div className="text-center py-8">
+                  <h3 className="text-2xl font-bold text-brand-green mb-4">Application Submitted!</h3>
+                  <p className="text-gray-700 mb-6">Thank you for your interest in joining Vitality Community Care. We will review your application and contact you soon.</p>
+                  <button
+                    onClick={() => setSubmitSuccess(false)}
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-brand-blue to-brand-green hover:from-brand-blue/90 hover:to-brand-green/90 hover:shadow-lg transition duration-300 hover:-translate-y-1"
+                  >
+                    Submit Another Application
+                  </button>
+                </div>
+              ) : (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  {formError && (
+                    <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-4">
+                      <p className="text-red-700">{formError}</p>
+                    </div>
+                  )}
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">First name</label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">Last name</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-1">Position</label>
+                    <select
+                      id="position"
+                      name="position"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      required
+                    >
+                      <option value="">Please select a position</option>
+                      {careers.map((career, index) => (
+                        <option key={index} value={career.title}>{career.title}</option>
+                      ))}
+                      <option value="Other">Other (Please specify in message)</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-1">Upload Resume</label>
+                    <input
+                      type="file"
+                      id="resume"
+                      name="resume"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Tell us more</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      placeholder="Tell us about your experience, qualifications, and why you're interested in joining our team."
+                    ></textarea>
+                  </div>
+                  
+                  <div className="flex justify-center">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-brand-blue to-brand-green hover:from-brand-blue/90 hover:to-brand-green/90 hover:shadow-lg transition duration-300 hover:-translate-y-1"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Submit Details'}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
