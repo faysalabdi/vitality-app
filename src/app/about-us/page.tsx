@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://vitalitycommunitycare.com.au/about-us',
     images: [
       {
-        url: '/images/about-us-og.jpg', // Replace with actual image when available
+        url: '/images/about-us-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Vitality Community Care team',
@@ -29,7 +29,7 @@ export default function AboutUsPage() {
       {/* Hero Banner */}
       <section className="relative min-h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden">
         <Image 
-          src="/AdobeStock_423741997-scaled-1.jpeg" 
+          src="/pwd-support.png" 
           alt="About Vitality Community Care" 
           fill
           className="object-cover"
@@ -225,7 +225,7 @@ export default function AboutUsPage() {
                 fontWeight: 'bold'
               }}>Clinical Director</p>
               <p className="text-gray-600 mb-4">
-                Azhaar brings his extensive background as a registered nurse and healthcare administrator to ensure our clinical practices meet the highest standards of care.
+                Azhaar brings her extensive background as a registered nurse and healthcare administrator to ensure our clinical practices meet the highest standards of care.
               </p>
             </div>
             
