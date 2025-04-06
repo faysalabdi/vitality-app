@@ -23,6 +23,11 @@ import { ReferralCTA } from '@/components/sections/ReferralCTA';
 import { BenefitsSection } from '@/components/sections/BenefitsSection';
 import { CertificationsSection } from '@/components/sections/CertificationsSection';
 import { ContactForm } from '@/components/sections/ContactForm';
+import Testimonials from '@/components/sections/Testimonials';
+import StatsCounter from '@/components/sections/StatsCounter';
+import TeamSection from '@/components/sections/TeamSection';
+import GallerySection from '@/components/sections/GallerySection';
+import BlogPreview from '@/components/sections/BlogPreview';
 
 export default function Home() {
   return (
@@ -31,9 +36,14 @@ export default function Home() {
       <HeroCarousel />
       <IntroSection />
       <ServicesSection />
-      <ReferralCTA />
+      <StatsCounter />
       <BenefitsSection />
+      <GallerySection />
+      <TeamSection />
+      <Testimonials />
+      <BlogPreview />
       <CertificationsSection />
+      <ReferralCTA />
       <ContactForm />
     </>
   );
