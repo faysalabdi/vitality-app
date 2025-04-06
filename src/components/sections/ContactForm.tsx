@@ -28,8 +28,14 @@ export const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Email to send form data to
+      const emailTo = 'faysalrulz123@gmail.com';
+      console.log('Sending form data to:', emailTo, formData);
+      
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
       setIsSubmitting(false);
       setFormSuccess(true);
       
@@ -47,7 +53,10 @@ export const ContactForm = () => {
         location: '',
         message: ''
       });
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,8 +71,8 @@ export const ContactForm = () => {
               <div className="space-y-6 mt-8">
                 <div>
                   <p className="text-white/80 mb-1">Email us at</p>
-                  <a href="mailto:contact@vitalitycommunitycare.com.au" className="text-white hover:underline block font-medium">
-                    contact@vitalitycommunitycare.com.au
+                  <a href="mailto:faysalrulz123@gmail.com" className="text-white hover:underline block font-medium">
+                    faysalrulz123@gmail.com
                   </a>
                 </div>
                 
@@ -109,7 +118,7 @@ export const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   />
                 </div>
                 
@@ -121,7 +130,7 @@ export const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   />
                 </div>
                 
@@ -133,7 +142,7 @@ export const ContactForm = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   />
                 </div>
                 
@@ -142,7 +151,7 @@ export const ContactForm = () => {
                     name="service" 
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   >
                     <option value="" disabled>Select Service:</option>
                     <option value="ndis">NDIS Support</option>
@@ -158,7 +167,7 @@ export const ContactForm = () => {
                     name="location" 
                     value={formData.location}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   >
                     <option value="" disabled>Your Location:</option>
                     <option value="VIC">VIC</option>
@@ -176,7 +185,7 @@ export const ContactForm = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                   ></textarea>
                 </div>
                 

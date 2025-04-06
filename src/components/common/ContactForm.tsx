@@ -31,8 +31,11 @@ const ContactForm = () => {
     
     try {
       // In a real implementation, you would send this data to your server or a form service
-      // For demonstration, we're simulating a successful submission
       console.log('Form data:', data);
+      
+      // Email address to send the form data to
+      const emailTo = 'faysalrulz123@gmail.com';
+      console.log('Sending form data to:', emailTo);
       
       // Simulate network request
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -75,7 +78,7 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Name"
-            className={`w-full p-3 border rounded-md ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+            className={`w-full p-3 border rounded-md bg-white text-gray-800 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
             {...register('name', { required: true })}
           />
           {errors.name && <span className="text-red-500 text-sm">Name is required</span>}
@@ -85,7 +88,7 @@ const ContactForm = () => {
           <input
             type="tel"
             placeholder="Your Phone Number"
-            className={`w-full p-3 border rounded-md ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+            className={`w-full p-3 border rounded-md bg-white text-gray-800 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
             {...register('phone', { required: true })}
           />
           {errors.phone && <span className="text-red-500 text-sm">Phone number is required</span>}
@@ -95,7 +98,7 @@ const ContactForm = () => {
           <input
             type="email"
             placeholder="Email"
-            className={`w-full p-3 border rounded-md ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+            className={`w-full p-3 border rounded-md bg-white text-gray-800 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
             {...register('email', { 
               required: true,
               pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -110,7 +113,7 @@ const ContactForm = () => {
         </div>
         
         <div>
-          <div className="mb-2">Your Location:</div>
+          <div className="mb-2 text-gray-800">Your Location:</div>
           <div className="flex flex-wrap gap-4">
             {locationOptions.map((location, index) => (
               <div key={index} className="flex items-center">
@@ -121,7 +124,7 @@ const ContactForm = () => {
                   className="mr-2 h-4 w-4 accent-[#39A9E0]"
                   {...register('location', { required: true })}
                 />
-                <label htmlFor={`location-${location}`} className="text-gray-700">{location}</label>
+                <label htmlFor={`location-${location}`} className="text-gray-800">{location}</label>
               </div>
             ))}
           </div>
@@ -132,7 +135,7 @@ const ContactForm = () => {
           <textarea
             placeholder="Message"
             rows={4}
-            className={`w-full p-3 border rounded-md ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+            className={`w-full p-3 border rounded-md bg-white text-gray-800 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
             {...register('message', { required: true })}
           ></textarea>
           {errors.message && <span className="text-red-500 text-sm">Message is required</span>}

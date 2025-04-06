@@ -24,7 +24,6 @@ import { CertificationsSection } from '@/components/sections/CertificationsSecti
 import { ContactForm } from '@/components/sections/ContactForm';
 import Testimonials from '@/components/sections/Testimonials';
 import StatsCounter from '@/components/sections/StatsCounter';
-import TeamSection from '@/components/sections/TeamSection';
 import OurApproachSection from '@/components/sections/OurApproachSection';
 import ExpandedServicesSection from '@/components/sections/ExpandedServicesSection';
 import WorkWithUsSection from '@/components/sections/WorkWithUsSection';
@@ -38,7 +37,7 @@ export default function Home() {
       <StatsCounter />
       <BenefitsSection />
       <OurApproachSection />
-      <TeamSection />
+
       <Testimonials />
       <ExpandedServicesSection />
       <WorkWithUsSection />

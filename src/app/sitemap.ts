@@ -4,7 +4,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://vitalitycommunitycare.com.au';
   
   // Define routes for the sitemap
-  // Update this list as you add more pages to your site
   const routes = [
     {
       url: '/',

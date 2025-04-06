@@ -16,8 +16,15 @@ export default function CareersPage() {
     setFormError('');
 
     try {
-      // In a real application, you would send this data to your backend
-      // For demo purposes, we'll just simulate a successful submission
+      // Get form data
+      const formData = new FormData(e.target as HTMLFormElement);
+      const formDataObj = Object.fromEntries(formData.entries());
+      
+      // Email to send form data to
+      const emailTo = 'faysalrulz123@gmail.com';
+      console.log('Sending application to:', emailTo, formDataObj);
+      
+      // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       setSubmitSuccess(true);
@@ -187,11 +194,17 @@ export default function CareersPage() {
             <div className="bg-gray-50 rounded-lg shadow-md p-8 mt-8">
               {submitSuccess ? (
                 <div className="text-center py-8">
-                  <h3 className="text-2xl font-bold text-brand-green mb-4">Application Submitted!</h3>
+                  <h3 className="text-2xl font-bold mb-4" style={{ 
+                    background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                    display: 'inline-block'
+                  }}>Application Submitted!</h3>
                   <p className="text-gray-700 mb-6">Thank you for your interest in joining Vitality Community Care. We will review your application and contact you soon.</p>
                   <button
                     onClick={() => setSubmitSuccess(false)}
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-brand-blue to-brand-green hover:from-brand-blue/90 hover:to-brand-green/90 hover:shadow-lg transition duration-300 hover:-translate-y-1"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg transition duration-300 hover:-translate-y-1"
                   >
                     Submit Another Application
                   </button>
@@ -211,7 +224,7 @@ export default function CareersPage() {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                         required
                       />
                     </div>
@@ -221,7 +234,7 @@ export default function CareersPage() {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                         required
                       />
                     </div>
@@ -234,7 +247,7 @@ export default function CareersPage() {
                         type="email"
                         id="email"
                         name="email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                         required
                       />
                     </div>
@@ -244,7 +257,7 @@ export default function CareersPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                         required
                       />
                     </div>
@@ -255,7 +268,7 @@ export default function CareersPage() {
                     <select
                       id="position"
                       name="position"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                       required
                     >
                       <option value="">Please select a position</option>
@@ -272,7 +285,7 @@ export default function CareersPage() {
                       type="file"
                       id="resume"
                       name="resume"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                       required
                     />
                   </div>
@@ -283,7 +296,7 @@ export default function CareersPage() {
                       id="message"
                       name="message"
                       rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-2 focus:ring-[#39A9E0] focus:border-transparent"
                       placeholder="Tell us about your experience, qualifications, and why you're interested in joining our team."
                     ></textarea>
                   </div>
@@ -291,7 +304,7 @@ export default function CareersPage() {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-brand-blue to-brand-green hover:from-brand-blue/90 hover:to-brand-green/90 hover:shadow-lg transition duration-300 hover:-translate-y-1"
+                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg transition duration-300 hover:-translate-y-1 disabled:opacity-70"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? 'Submitting...' : 'Submit Details'}

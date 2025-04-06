@@ -1,11 +1,45 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { useState } from 'react';
 
 export default function ReferralPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Collect form data
+      const formData = new FormData(e.currentTarget);
+      const formDataObj = Object.fromEntries(formData.entries());
+      
+      // Email to send form data to
+      const emailTo = 'faysalrulz123@gmail.com';
+      console.log('Sending referral data to:', emailTo, formDataObj);
+      
+      // Simulate submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setFormSuccess(true);
+      setIsSubmitting(false);
+      
+      // Reset form
+      e.currentTarget.reset();
+      
+      // Hide success message after some time
+      setTimeout(() => {
+        setFormSuccess(false);
+      }, 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Simple Header */}
@@ -25,10 +59,10 @@ export default function ReferralPage() {
                 display: 'inline-block'
               }}
             >
-              Connect People with Care
+              We're Here to Support You
             </h2>
             <p className="text-gray-600 text-lg mb-0 max-w-3xl mx-auto">
-              Submit participant details to connect them with our personalized support services
+              Complete the form below to refer someone to our services. We'll respond promptly to ensure they receive the care they need.
             </p>
           </div>
         </div>
@@ -43,7 +77,14 @@ export default function ReferralPage() {
             </div>
             
             <div className="p-8">
-              <form className="space-y-6">
+              {formSuccess && (
+                <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md flex items-center mb-6">
+                  <span className="mr-2">✓</span>
+                  Thank you for your referral! We'll be in touch soon.
+                </div>
+              )}
+            
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Referrer Information */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4" style={{ 
@@ -58,8 +99,10 @@ export default function ReferralPage() {
                       <label htmlFor="referrerName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                       <input
                         id="referrerName"
+                        name="referrerName"
                         type="text"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Your full name"
                       />
                     </div>
@@ -67,8 +110,9 @@ export default function ReferralPage() {
                       <label htmlFor="referrerOrganization" className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
                       <input
                         id="referrerOrganization"
+                        name="referrerOrganization"
                         type="text"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Your organization name"
                       />
                     </div>
@@ -76,8 +120,10 @@ export default function ReferralPage() {
                       <label htmlFor="referrerEmail" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                       <input
                         id="referrerEmail"
+                        name="referrerEmail"
                         type="email"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -85,8 +131,10 @@ export default function ReferralPage() {
                       <label htmlFor="referrerPhone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                       <input
                         id="referrerPhone"
+                        name="referrerPhone"
                         type="tel"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Your phone number"
                       />
                     </div>
@@ -107,8 +155,10 @@ export default function ReferralPage() {
                       <label htmlFor="participantName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                       <input
                         id="participantName"
+                        name="participantName"
                         type="text"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Participant's full name"
                       />
                     </div>
@@ -116,16 +166,19 @@ export default function ReferralPage() {
                       <label htmlFor="participantDOB" className="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
                       <input
                         id="participantDOB"
+                        name="participantDOB"
                         type="date"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                       />
                     </div>
                     <div>
                       <label htmlFor="participantEmail" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                       <input
                         id="participantEmail"
+                        name="participantEmail"
                         type="email"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="participant@example.com"
                       />
                     </div>
@@ -133,8 +186,9 @@ export default function ReferralPage() {
                       <label htmlFor="participantPhone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                       <input
                         id="participantPhone"
+                        name="participantPhone"
                         type="tel"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Participant's phone number"
                       />
                     </div>
@@ -142,8 +196,9 @@ export default function ReferralPage() {
                       <label htmlFor="participantAddress" className="block text-sm font-medium text-gray-700 mb-1">Address</label>
                       <input
                         id="participantAddress"
+                        name="participantAddress"
                         type="text"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Participant's address"
                       />
                     </div>
@@ -151,28 +206,15 @@ export default function ReferralPage() {
                       <label htmlFor="ndisNumber" className="block text-sm font-medium text-gray-700 mb-1">NDIS Number</label>
                       <input
                         id="ndisNumber"
+                        name="ndisNumber"
                         type="text"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="NDIS Number if applicable"
                       />
-                    </div>
-                    <div>
-                      <label htmlFor="fundingType" className="block text-sm font-medium text-gray-700 mb-1">Funding Type</label>
-                      <select
-                        id="fundingType"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
-                      >
-                        <option value="">Select funding type</option>
-                        <option value="ndis">NDIS</option>
-                        <option value="medicare">Medicare</option>
-                        <option value="private">Private</option>
-                        <option value="other">Other</option>
-                      </select>
                     </div>
                   </div>
                 </div>
 
-                {/* Service Needs */}
                 <div className="pt-4 border-t border-gray-200">
                   <h3 className="text-xl font-semibold mb-4" style={{ 
                     background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
@@ -186,7 +228,9 @@ export default function ReferralPage() {
                       <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-1">Service Type Required</label>
                       <select
                         id="serviceType"
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        name="serviceType"
+                        required
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                       >
                         <option value="">Select service type</option>
                         <option value="daily-living">Daily Living Support</option>
@@ -199,8 +243,9 @@ export default function ReferralPage() {
                       <label htmlFor="additionalInfo" className="block text-sm font-medium text-gray-700 mb-1">Additional Information</label>
                       <textarea
                         id="additionalInfo"
+                        name="additionalInfo"
                         rows={4}
-                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#39A9E0] focus:ring-[#39A9E0]"
+                        className="w-full rounded-md border-gray-300 shadow-sm bg-white text-gray-800 focus:border-[#39A9E0] focus:ring-[#39A9E0]"
                         placeholder="Please provide any additional details about the participant's needs, goals, or other relevant information"
                       ></textarea>
                     </div>
@@ -213,8 +258,10 @@ export default function ReferralPage() {
                     <div className="flex items-center h-5">
                       <input
                         id="consent"
+                        name="consent"
                         type="checkbox"
-                        className="h-4 w-4 text-[#39A9E0] border-gray-300 rounded focus:ring-[#39A9E0]"
+                        required
+                        className="h-4 w-4 text-[#39A9E0] border-gray-300 rounded bg-white focus:ring-[#39A9E0]"
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -234,10 +281,15 @@ export default function ReferralPage() {
                   </Link>
                   <button
                     type="submit"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg transition duration-300 hover:-translate-y-1"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] hover:shadow-lg transition duration-300 hover:-translate-y-1 disabled:opacity-70"
                   >
-                    Submit Referral
-                    <FaArrowRight className="ml-2 h-4 w-4" />
+                    {isSubmitting ? 'Submitting...' : (
+                      <>
+                        Submit Referral
+                        <FaArrowRight className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
