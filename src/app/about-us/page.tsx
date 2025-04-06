@@ -27,35 +27,37 @@ export default function AboutUsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[400px] overflow-hidden">
+      <section className="relative min-h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden">
         <Image 
-          src="/side-view-people-working-office.jpg" 
+          src="/AdobeStock_423741997-scaled-1.jpeg" 
           alt="About Vitality Community Care" 
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-              About Us
-            </h1>
-            <h2 
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
-              style={{ 
-                background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                color: 'transparent',
-                display: 'inline-block'
-              }}
-            >
-              Our Story & Values
-            </h2>
-            <p className="text-white text-base md:text-lg max-w-2xl">
-              Empowering individuals to live their best lives through compassionate and personalized care.
-            </p>
+        <div className="relative h-full flex items-start pt-16 sm:pt-24 md:pt-32 z-10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-lg">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+                About Us
+              </h1>
+              <h2 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6"
+                style={{ 
+                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                  display: 'inline-block'
+                }}
+              >
+                Our Story & Values
+              </h2>
+              <p className="text-white text-base md:text-lg mb-6 max-w-md">
+                Empowering individuals to live their best lives through compassionate and personalized care.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -193,7 +195,7 @@ export default function AboutUsPage() {
                   JD
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">Jane Doe</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Hamza Abdiwahab</h3>
               <p className="mb-4" style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -203,7 +205,7 @@ export default function AboutUsPage() {
                 fontWeight: 'bold'
               }}>Founder & CEO</p>
               <p className="text-gray-600 mb-4">
-                With over 20 years of experience in healthcare management, Jane founded Vitality Community Care with a vision to transform care services through a person-centered approach.
+                Hamza founded Vitality Community Care with a vision to transform care services through a person-centered approach.
               </p>
             </div>
             
@@ -213,7 +215,7 @@ export default function AboutUsPage() {
                   JS
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">John Smith</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Azhaar Abdiwahab</h3>
               <p className="mb-4" style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -223,7 +225,7 @@ export default function AboutUsPage() {
                 fontWeight: 'bold'
               }}>Clinical Director</p>
               <p className="text-gray-600 mb-4">
-                John brings his extensive background as a registered nurse and healthcare administrator to ensure our clinical practices meet the highest standards of care.
+                Azhaar brings his extensive background as a registered nurse and healthcare administrator to ensure our clinical practices meet the highest standards of care.
               </p>
             </div>
             
@@ -233,7 +235,7 @@ export default function AboutUsPage() {
                   SC
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">Sarah Chen</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1">Faysal Abdiwahab</h3>
               <p className="mb-4" style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -243,7 +245,7 @@ export default function AboutUsPage() {
                 fontWeight: 'bold'
               }}>NDIS Services Manager</p>
               <p className="text-gray-600 mb-4">
-                Sarah specializes in NDIS service delivery and has dedicated her career to advocating for the rights and needs of people with disabilities.
+                Faysal specializes in NDIS service delivery and has dedicated her career to advocating for the rights and needs of people with disabilities.
               </p>
             </div>
           </div>

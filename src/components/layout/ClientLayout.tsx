@@ -16,7 +16,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
       <Header isFixed={true} />
-      <main className={`min-h-screen ${isHomePage ? 'pt-0' : 'pt-24 md:pt-28'}`}>
+      <main className={`min-h-screen bg-gradient-to-r from-[#39A9E0] to-[#8BC53F] ${isHomePage ? 'pt-0' : 'pt-[3rem]'}`}>
         {children}
       </main>
       <Footer />

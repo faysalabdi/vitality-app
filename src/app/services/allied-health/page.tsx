@@ -82,23 +82,15 @@ export default function AlliedHealthServicesPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
-        <Image 
-          src="/NDIS-and-the-Healing-Power-of-Remedial-Massage-and-Myotherapy.jpg" 
-          alt="Allied Health Services by Vitality Community Care" 
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+      {/* Simple Header */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
               Allied Health Services
             </h1>
             <h2 
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              className="text-2xl md:text-3xl font-bold mb-4"
               style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -109,7 +101,7 @@ export default function AlliedHealthServicesPage() {
             >
               Expert Professional Care
             </h2>
-            <p className="text-white text-base md:text-lg max-w-2xl">
+            <p className="text-gray-600 text-lg mb-0 max-w-3xl mx-auto">
               Our team of qualified allied health professionals provides specialized services to improve your health, wellbeing, and quality of life.
             </p>
           </div>

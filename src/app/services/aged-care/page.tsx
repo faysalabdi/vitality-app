@@ -64,23 +64,15 @@ export default function AgedCareServicesPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
-        <Image 
-          src="/care-elderly-abstract-concept-vector-illustration-eldercare-senior-homesick-nursing-care-services-happy-wheelchair-home-support-retired-people-nursing-home-abstract-metaphor_335657-1407.avif" 
-          alt="Aged Care Services by Vitality Community Care" 
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+      {/* Simple Header */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
               Aged Care Services
             </h1>
             <h2 
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              className="text-2xl md:text-3xl font-bold mb-4"
               style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -91,7 +83,7 @@ export default function AgedCareServicesPage() {
             >
               Dignity & Independence
             </h2>
-            <p className="text-white text-base md:text-lg max-w-2xl">
+            <p className="text-gray-600 text-lg mb-0 max-w-3xl mx-auto">
               We provide compassionate aged care services that promote dignity, independence, and quality of life for seniors in the comfort of their own homes.
             </p>
           </div>
