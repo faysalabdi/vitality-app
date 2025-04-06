@@ -26,8 +26,9 @@ import { ContactForm } from '@/components/sections/ContactForm';
 import Testimonials from '@/components/sections/Testimonials';
 import StatsCounter from '@/components/sections/StatsCounter';
 import TeamSection from '@/components/sections/TeamSection';
-import GallerySection from '@/components/sections/GallerySection';
-import BlogPreview from '@/components/sections/BlogPreview';
+import OurApproachSection from '@/components/sections/OurApproachSection';
+import ExpandedServicesSection from '@/components/sections/ExpandedServicesSection';
+import WorkWithUsSection from '@/components/sections/WorkWithUsSection';
 
 export default function Home() {
   return (
@@ -38,10 +39,11 @@ export default function Home() {
       <ServicesSection />
       <StatsCounter />
       <BenefitsSection />
-      <GallerySection />
+      <OurApproachSection />
       <TeamSection />
       <Testimonials />
-      <BlogPreview />
+      <ExpandedServicesSection />
+      <WorkWithUsSection />
       <CertificationsSection />
       <ReferralCTA />
       <ContactForm />
