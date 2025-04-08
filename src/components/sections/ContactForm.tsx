@@ -29,12 +29,18 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Email to send form data to
-      const emailTo = 'faysalrulz123@gmail.com';
-      console.log('Sending form data to:', emailTo, formData);
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
       
       setIsSubmitting(false);
       setFormSuccess(true);
