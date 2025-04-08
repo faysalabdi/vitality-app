@@ -99,10 +99,10 @@ export default function CareersPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              Join Our Team
+              Careers
             </h1>
             <h2 
-              className="text-2xl md:text-3xl font-bold mb-4"
+              className="text-2xl md:text-3xl font-bold mb-6"
               style={{ 
                 background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                 WebkitBackgroundClip: 'text',
@@ -111,26 +111,77 @@ export default function CareersPage() {
                 display: 'inline-block'
               }}
             >
-              Make a Difference
+              Join our team today!
             </h2>
-            <p className="text-gray-600 text-lg mb-0 max-w-3xl mx-auto">
-              At Vitality Community Care, we're looking for passionate individuals who share our commitment to providing high-quality, person-centered care.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* Why Work With Us (Enhanced) */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Work With Us</h2>
-            <p className="text-lg text-gray-600 mb-4">
-              Vitality Community Care is more than just a workplace – it's a community of dedicated professionals who are passionate about making a positive difference in people's lives.
-            </p>
-            <p className="text-lg text-gray-600">
-              We offer competitive salaries, ongoing professional development, flexible working arrangements, and a supportive team environment. Most importantly, we offer the opportunity to do meaningful work that truly matters.
-            </p>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Work With Us?</h2>
+            
+            <div className="mb-12">
+              <p className="text-lg text-gray-600 mb-6 max-w-4xl mx-auto text-center">
+                At Vitality Community Care, we understand that every member of our team plays a crucial part in helping our clients achieve the lives they desire. Right from the initial stages of our recruitment, we seek more than just industry knowledge and experience; we're on the lookout for genuine warmth. If you are passionate about working in the NDIS space and are experienced or someone who's just gotten their qualification, we would like to work with you. We couldn't be more proud of the individuals who stand as the face of Vitality Community Care each day.
+              </p>
+              <p className="text-lg text-gray-600 mb-0 max-w-4xl mx-auto text-center">
+                Vitality Community Care is more than just a workplace – it's a community of dedicated professionals who are passionate about making a positive difference in people's lives. We offer competitive salaries, ongoing professional development, flexible working arrangements, and a supportive team environment.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Competitive Wages</h3>
+                <p className="text-gray-600 text-center">
+                  We nurture your growth, offering above-award wages for exceptional work.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">A Sense of Belonging</h3>
+                <p className="text-gray-600 text-center">
+                  Find your place and feel truly welcome in our supportive and inclusive environment.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Work-Life Balance</h3>
+                <p className="text-gray-600 text-center">
+                  We don't confine you to the traditional 9-5. Manage your own schedule and find a work-life balance that suits you.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Hands-on Training</h3>
+                <p className="text-gray-600 text-center">
+                  Worry not—our on-the-job training ensures you're well-equipped for your role. Don't hesitate; we've got you covered!
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Meaningful Work</h3>
+                <p className="text-gray-600 text-center">
+                  Make a real difference in people's lives every day with work that is truly meaningful and rewarding.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Professional Growth</h3>
+                <p className="text-gray-600 text-center">
+                  Access ongoing training, mentoring, and career development opportunities to help you grow professionally.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 md:col-start-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Supportive Team</h3>
+                <p className="text-gray-600 text-center">
+                  Join a team that values collaboration, respect, and mutual support in achieving our shared mission.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,36 +215,6 @@ export default function CareersPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Work With Us</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Meaningful Work</h3>
-              <p className="text-gray-600 text-center">
-                Make a real difference in people's lives every day with work that is truly meaningful and rewarding.
-              </p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Professional Growth</h3>
-              <p className="text-gray-600 text-center">
-                Access ongoing training, mentoring, and career development opportunities to help you grow professionally.
-              </p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Supportive Team</h3>
-              <p className="text-gray-600 text-center">
-                Join a team that values collaboration, respect, and mutual support in achieving our shared mission.
-              </p>
-            </div>
           </div>
         </div>
       </section>
