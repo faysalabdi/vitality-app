@@ -30,15 +30,18 @@ const ContactForm = () => {
     setErrorMessage(null);
     
     try {
-      // In a real implementation, you would send this data to your server or a form service
-      console.log('Form data:', data);
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
       
-      // Email address to send the form data to
-      const emailTo = 'faysalrulz123@gmail.com';
-      console.log('Sending form data to:', emailTo);
-      
-      // Simulate network request
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
       
       setSubmitSuccess(true);
       reset();

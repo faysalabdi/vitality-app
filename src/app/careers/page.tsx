@@ -17,24 +17,58 @@ export default function CareersPage() {
 
     try {
       // Get form data
-      const formData = new FormData(e.target as HTMLFormElement);
+      const formElement = e.target as HTMLFormElement;
+      const formData = new FormData(formElement);
+      
+      // Handle resume file
+      const resumeFile = (formElement.querySelector('#resume') as HTMLInputElement).files?.[0];
+      let resumeBase64 = '';
+      let resumeFileName = '';
+      
+      if (resumeFile) {
+        resumeFileName = resumeFile.name;
+        resumeBase64 = await convertFileToBase64(resumeFile);
+      }
+      
+      // Convert form data to object
       const formDataObj = Object.fromEntries(formData.entries());
       
-      // Email to send form data to
-      const emailTo = 'faysalrulz123@gmail.com';
-      console.log('Sending application to:', emailTo, formDataObj);
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formDataObj,
+          resumeFileName,
+          resumeBase64,
+          isCareerApplication: true, // Flag to identify this is a career application
+        }),
+      });
       
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
       
       setSubmitSuccess(true);
-      (e.target as HTMLFormElement).reset();
+      formElement.reset();
     } catch (error) {
       setFormError('There was a problem submitting your application. Please try again.');
       console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
+  };
+  
+  // Convert file to base64 for sending in JSON
+  const convertFileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+    });
   };
 
   const careers = [

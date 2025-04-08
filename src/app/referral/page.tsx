@@ -17,12 +17,21 @@ export default function ReferralPage() {
       const formData = new FormData(e.currentTarget);
       const formDataObj = Object.fromEntries(formData.entries());
       
-      // Email to send form data to
-      const emailTo = 'faysalrulz123@gmail.com';
-      console.log('Sending referral data to:', emailTo, formDataObj);
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formDataObj,
+          isReferral: true, // Flag to identify this is a referral form
+        }),
+      });
       
-      // Simulate submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
       
       setFormSuccess(true);
       setIsSubmitting(false);
