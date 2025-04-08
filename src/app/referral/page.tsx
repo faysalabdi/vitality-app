@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function ReferralPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +38,9 @@ export default function ReferralPage() {
       setIsSubmitting(false);
       
       // Reset form
-      e.currentTarget.reset();
+      if (formRef.current) {
+        formRef.current.reset();
+      }
       
       // Hide success message after some time
       setTimeout(() => {
@@ -93,7 +96,7 @@ export default function ReferralPage() {
                 </div>
               )}
             
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 {/* Referrer Information */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4" style={{ 
