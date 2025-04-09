@@ -32,10 +32,11 @@ export default function Home() {
   return (
     <>
       <LocalBusinessStructuredData />
-      <HeroCarousel />
       <IntroSection />
-      <StatsCounter />
       <BenefitsSection />
+      <HeroCarousel />
+      <StatsCounter />
+      
       <OurApproachSection />
 
       <Testimonials />

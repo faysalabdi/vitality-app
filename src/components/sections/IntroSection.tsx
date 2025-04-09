@@ -1,6 +1,6 @@
 export const IntroSection = () => {
   return (
-    <section className="py-10 md:py-16 bg-white">
+    <section className="py-10 md:py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">Vitality Community Care</h1>

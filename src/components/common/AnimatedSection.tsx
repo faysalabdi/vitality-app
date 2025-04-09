@@ -39,11 +39,11 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children, 
   className = '',
   delay = 0,
-  threshold = 0.1, // Trigger animation when 10% of the element is visible
-  variantType = 'fadeInUp' // Default to fadeInUp
+  threshold = 0.1,
+  variantType = 'fadeInUp' 
 }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold, triggerOnce: true }); // triggerOnce ensures animation runs only once
+  const [ref, inView] = useInView({ threshold, triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
@@ -51,7 +51,6 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     }
   }, [controls, inView]);
 
-  // Select the appropriate variants based on the prop
   const selectedVariants = animationVariants[variantType];
 
   return (

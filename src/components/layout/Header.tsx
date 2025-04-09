@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
@@ -16,28 +16,35 @@ const Header = ({ isFixed = false }: HeaderProps) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Header classes with gradient background, no shadow
+  const headerClasses = `w-full relative z-50 ${isFixed ? 'fixed top-0 left-0 right-0' : ''} transition-colors duration-300 bg-gradient-to-r from-[#39A9E0] to-[#8BC53F]`;
+  const textClasses = 'text-white';
+  const iconColorClasses = 'text-white';
+  const hoverTextClasses = 'hover:text-gray-200';
+  const hoverBrandGreenClasses = 'hover:text-gray-200';
+
   return (
-    <header className={`w-full bg-white shadow-md relative z-50 ${isFixed ? 'fixed top-0 left-0 right-0' : ''}`}>
+    <header className={headerClasses}>
       <div className="container mx-auto px-4">
-        {/* Top bar with contact info */}
-        <div className="flex flex-col md:flex-row justify-between items-center py-1 border-b">
+        {/* Top bar with contact info - Removed border */}
+        <div className="flex flex-col md:flex-row justify-between items-center py-1">
           <div className="flex items-center space-x-4 mb-1 md:mb-0">
             <div className="flex items-center">
-              <span className="text-brand-blue mr-2">
+              <span className={`${iconColorClasses} mr-2`}>
                 <FaPhone size={16} />
               </span>
-              <a href="tel:1300395852" className="text-gray-700 hover:text-brand-blue">1300 395 852</a>
+              <a href="tel:1300395852" className={`${textClasses} ${hoverTextClasses}`}>1300 395 852</a>
             </div>
             <div className="flex items-center">
-              <span className="text-brand-blue mr-2">
+              <span className={`${iconColorClasses} mr-2`}>
                 <FaEnvelope size={16} />
               </span>
-              <a href="mailto:contact@vitalitycommunitycare.com.au" className="text-gray-700 hover:text-brand-blue">contact@vitalitycommunitycare.com.au</a>
+              <a href="mailto:contact@vitalitycommunitycare.com.au" className={`${textClasses} ${hoverTextClasses}`}>contact@vitalitycommunitycare.com.au</a>
             </div>
           </div>
           <div className="flex space-x-4">
-            <Link href="/careers" className="text-gray-700 hover:text-brand-green font-medium">Career</Link>
-            <Link href="/referral" className="text-gray-700 hover:text-brand-green font-medium">Referral</Link>
+            <Link href="/careers" className={`${textClasses} ${hoverBrandGreenClasses} font-medium`}>Career</Link>
+            <Link href="/referral" className={`${textClasses} ${hoverBrandGreenClasses} font-medium`}>Referral</Link>
           </div>
         </div>
 
@@ -60,7 +67,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-brand-blue"
+              className="text-white hover:text-brand-blue"
             >
               {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -69,10 +76,10 @@ const Header = ({ isFixed = false }: HeaderProps) => {
           {/* Desktop navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
-              <li><Link href="/" className="text-gray-700 hover:text-brand-green font-medium">Home</Link></li>
-              <li><Link href="/about-us" className="text-gray-700 hover:text-brand-green font-medium">About Us</Link></li>
+              <li><Link href="/" className="text-white hover:text-brand-green font-medium">Home</Link></li>
+              <li><Link href="/about-us" className="text-white hover:text-brand-green font-medium">About Us</Link></li>
               <li className="relative group">
-                <Link href="/services/ndis" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                <Link href="/services/ndis" className="text-white hover:text-brand-green font-medium flex items-center">
                   NDIS
                   <FaChevronDown className="ml-1 text-xs" />
                 </Link>
@@ -100,7 +107,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                 </div>
               </li>
               <li className="relative group">
-                <Link href="/services/aged-care" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                <Link href="/services/aged-care" className="text-white hover:text-brand-green font-medium flex items-center">
                   Aged Care
                   <FaChevronDown className="ml-1 text-xs" />
                 </Link>
@@ -113,7 +120,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                 </div>
               </li>
               <li className="relative group">
-                <Link href="/services/allied-health" className="text-gray-700 hover:text-brand-green font-medium flex items-center">
+                <Link href="/services/allied-health" className="text-white hover:text-brand-green font-medium flex items-center">
                   Allied Health
                   <FaChevronDown className="ml-1 text-xs" />
                 </Link>
@@ -127,7 +134,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                   </ul>
                 </div>
               </li>
-              <li><Link href="/contact-us" className="text-gray-700 hover:text-brand-green font-medium">Contact Us</Link></li>
+              <li><Link href="/contact-us" className="text-white hover:text-brand-green font-medium">Contact Us</Link></li>
             </ul>
           </nav>
         </div>
