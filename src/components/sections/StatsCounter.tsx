@@ -42,7 +42,7 @@ const Counter = ({ end, label, duration = 2, suffix = '' }: CounterProps) => {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-blue-600">
+      <div className="text-4xl md:text-5xl font-bold text-[#39A9E0]">
         {count}{suffix}
       </div>
       <div className="mt-2 text-gray-600 font-medium">{label}</div>

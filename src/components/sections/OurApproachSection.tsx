@@ -85,7 +85,7 @@ const OurApproachSection = () => {
         <div className="text-center mt-12">
           <a 
             href="/about-us" 
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition duration-300"
+            className="inline-block px-6 py-3 bg-[#39A9E0] text-white font-medium rounded-md hover:bg-[#2d8ac0] transition duration-300"
           >
             Learn More About Us
           </a>

@@ -17,8 +17,7 @@ export const ReferralCTA = () => {
           </div>
           <Link 
             href="/referral" 
-            className="bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-6 md:py-3 md:px-8 rounded-full shadow-lg transition duration-300 flex items-center"
-          >
+            className="bg-[#39A9E0] hover:bg-[#2d8ac0] text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full shadow-lg transition duration-300 flex items-center"          >
             <span>Make a Referral</span>
             <FaArrowRight className="ml-2" />
           </Link>
