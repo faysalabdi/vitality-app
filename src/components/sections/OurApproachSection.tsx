@@ -73,7 +73,7 @@ const OurApproachSection = () => {
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 text-center md:text-left">
+                <h3 className="text-xl font-semibold text-[#39A9E0] text-center md:text-left">
                   {approach.title}
                 </h3>
               </div>

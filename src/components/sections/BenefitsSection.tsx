@@ -5,7 +5,7 @@ export const BenefitsSection = () => {
     <section className="py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">The Vitality Difference</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">The Vitality Difference</h2>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Experience unparalleled care that goes beyond the basics. At Vitality Community Care, we treat every individual like family.
           </p>

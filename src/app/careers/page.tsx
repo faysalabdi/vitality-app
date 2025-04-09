@@ -117,7 +117,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Work With Us (Enhanced) */}
+      {/* Why Work With Us */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -154,31 +154,10 @@ export default function CareersPage() {
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 md:col-start-2" style={{ borderTop: '4px solid #8BC53F' }}>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Hands-on Training</h3>
                 <p className="text-gray-600 text-center">
                   Worry not—our on-the-job training ensures you're well-equipped for your role. Don't hesitate; we've got you covered!
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Meaningful Work</h3>
-                <p className="text-gray-600 text-center">
-                  Make a real difference in people's lives every day with work that is truly meaningful and rewarding.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Professional Growth</h3>
-                <p className="text-gray-600 text-center">
-                  Access ongoing training, mentoring, and career development opportunities to help you grow professionally.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 md:col-start-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Supportive Team</h3>
-                <p className="text-gray-600 text-center">
-                  Join a team that values collaboration, respect, and mutual support in achieving our shared mission.
                 </p>
               </div>
             </div>

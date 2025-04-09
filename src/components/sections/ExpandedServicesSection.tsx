@@ -110,7 +110,7 @@ const ExpandedServicesSection = () => {
                 
                 <Link 
                   href={service.link}
-                  className="mt-auto inline-flex items-center font-medium text-blue-600 hover:text-blue-800"
+                  className="mt-auto inline-flex items-center font-medium text-[#39A9E0] hover:text-[#2d8ac0]"
                 >
                   Learn More
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

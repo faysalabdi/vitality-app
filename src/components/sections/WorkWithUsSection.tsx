@@ -128,11 +128,11 @@ const WorkWithUsSection = () => {
                 key={role.id} 
                 className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <h4 className="text-xl font-semibold text-blue-600 mb-3">{role.title}</h4>
+                <h4 className="text-xl font-semibold text-[#39A9E0] mb-3">{role.title}</h4>
                 <p className="text-gray-600 mb-4">{role.responsibilities}</p>
                 <Link
                   href="/careers"
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800"
+                  className="inline-flex items-center text-[#39A9E0] font-medium hover:text-[#2d8ac0]"
                 >
                   View Details
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
