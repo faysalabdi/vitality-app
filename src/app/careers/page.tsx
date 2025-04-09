@@ -96,7 +96,7 @@ export default function CareersPage() {
   return (
     <div className="min-h-screen">
       {/* Simple Header */}
-      <section className="bg-gray-50 py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
@@ -120,7 +120,7 @@ export default function CareersPage() {
 
       {/* Why Work With Us */}
       <AnimatedSection variantType="fadeInUp">
-        <section className="py-16 bg-white">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Work With Us?</h2>
@@ -136,7 +136,7 @@ export default function CareersPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
                 <AnimatedSection variantType="zoomIn" delay={0.1}>
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 h-full" style={{ borderTop: '4px solid #39A9E0' }}>
+                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 h-full" style={{ borderTop: '4px solid #8BC53F' }}>
                     <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Competitive Wages</h3>
                     <p className="text-gray-600 text-center">
                       We nurture your growth, offering above-award wages for exceptional work.
@@ -154,15 +154,6 @@ export default function CareersPage() {
                 </AnimatedSection>
                 
                 <AnimatedSection variantType="zoomIn" delay={0.3}>
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 h-full" style={{ borderTop: '4px solid #39A9E0' }}>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Work-Life Balance</h3>
-                    <p className="text-gray-600 text-center">
-                      We don't confine you to the traditional 9-5. Manage your own schedule and find a work-life balance that suits you.
-                    </p>
-                  </div>
-                </AnimatedSection>
-                
-                <AnimatedSection variantType="zoomIn" delay={0.1} className="md:col-start-2">
                   <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2 h-full" style={{ borderTop: '4px solid #8BC53F' }}>
                     <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Hands-on Training</h3>
                     <p className="text-gray-600 text-center">

@@ -1,6 +1,6 @@
 export const CertificationsSection = () => {
   return (
-    <section className="py-10 md:py-12">
+    <section className="py-10 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-xl md:text-2xl font-bold text-center text-gray-800 mb-6 md:mb-8">Our Certifications</h2>
         <div className="flex flex-wrap justify-center gap-5 md:gap-8 lg:gap-16">

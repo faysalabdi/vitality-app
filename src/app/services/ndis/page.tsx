@@ -102,7 +102,7 @@ export default function NDISServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Simple Header */}
-      <section className="bg-gray-50 py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
@@ -129,7 +129,7 @@ export default function NDISServicesPage() {
 
       {/* Introduction Section */}
       <AnimatedSection variantType="fadeInUp">
-        <section className="py-16 bg-white">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Our NDIS Services</h2>
