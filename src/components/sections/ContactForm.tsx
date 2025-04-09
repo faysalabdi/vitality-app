@@ -78,7 +78,7 @@ export const ContactForm = () => {
                 <div>
                   <p className="text-white/80 mb-1">Email us at</p>
                   <a href="mailto:faysalrulz123@gmail.com" className="text-white hover:underline block font-medium">
-                    faysalrulz123@gmail.com
+                  contact@vitalitycommunitycare.com.au
                   </a>
                 </div>
                 
