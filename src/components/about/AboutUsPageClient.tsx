@@ -29,18 +29,11 @@ export default function AboutUsPageClient() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
               </h1>
               <h2 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8"
-                style={{ 
-                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                  display: 'inline-block'
-                }}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8"
               >
                 {subtitle}
               </h2>
