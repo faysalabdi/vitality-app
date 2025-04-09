@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { FaArrowRight } from 'react-icons/fa';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Vitality Community Care',
-  description: 'Vitality Community Care privacy policy. Learn about how we collect, use, and protect your personal information.',
+  title: 'Privacy & Dignity Policy | Vitality Community Care',
+  description: 'Vitality Community Care privacy and dignity policy. Learn how we respect and protect your dignity, privacy, and personal information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -16,7 +17,7 @@ export default function PrivacyPolicyPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              Privacy Policy
+              Privacy & Dignity Policy
             </h1>
             <h2 
               className="text-2xl md:text-3xl font-bold mb-4"
@@ -28,145 +29,100 @@ export default function PrivacyPolicyPage() {
                 display: 'inline-block'
               }}
             >
-              Your Privacy Matters
+              Your Privacy, Dignity, and Rights Matter
             </h2>
             <p className="text-gray-600 text-lg mb-0 max-w-3xl mx-auto">
-              Learn about how we collect, use, and protect your personal information.
+              Privacy and Dignity: A Commitment to Safeguarding Your Personal Information and Upholding Your Individual Rights.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Privacy Policy Content */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Introduction</h2>
-              <p className="text-gray-600 mb-4">
-                Vitality Community Care is committed to protecting your privacy and maintaining the security of any personal information received from you. We strictly adhere to the requirements of the privacy legislation in Australia, including the Privacy Act 1988 (Cth) and the Australian Privacy Principles.
+      {/* Privacy Policy Content - Replaced with content from the live site */} 
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto prose lg:prose-lg text-gray-700">
+              {/* Using prose class for better text formatting */}
+              <p className="lead text-lg text-center mb-8">
+                Vitality Community Care is committed to implementing a system to ensure each participant will receive quality services and supports that respect and protect their dignity and right to privacy.
               </p>
-              <p className="text-gray-600">
-                This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you engage with our services, visit our website, or interact with us in any way.
-              </p>
-            </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Information We Collect</h2>
-              <p className="text-gray-600 mb-4">
-                We may collect personal information about you in various ways, including:
-              </p>
-              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                <li>Information you provide directly to us when you engage with our services, such as your name, address, contact details, date of birth, and health information</li>
-                <li>Information about your service preferences and needs</li>
-                <li>Information from third parties, such as referrals from healthcare professionals or other service providers</li>
-                <li>Information collected through our website, including cookies and analytics data</li>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Vitality Community Care Ensures:</h3>
+              <ul className="list-disc pl-6 space-y-2 mb-6">
+                <li>Consistent processes and practices are in place that respect and protect the personal privacy and dignity of each participant.</li>
+                <li>Each participant is advised of confidentiality policies using the language, mode of communication, and terms that the participant is most likely to understand.</li>
+                <li>Each participant understands and agrees to what personal information will be collected and the reason, including recorded material in audio and/or visual format.</li>
               </ul>
-              <p className="text-gray-600">
-                We only collect personal information that is necessary for our functions and activities as a care provider.
-              </p>
-            </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">How We Use Your Information</h2>
-              <p className="text-gray-600 mb-4">
-                We use your personal information for the following purposes:
+              <p>
+                At Vitality Community Care, we will ensure each participant will receive quality services and support that respect and protect their dignity and right to privacy by complying with the 'Privacy Act 1988' and the 'NDIS Quality and Safeguarding Framework requirements and other legal obligations.
               </p>
-              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                <li>To provide and maintain our services</li>
-                <li>To process and fulfill your service requests</li>
-                <li>To communicate with you about your services, including appointments and changes</li>
-                <li>To improve our services and develop new ones</li>
-                <li>To comply with legal obligations, such as reporting requirements</li>
-                <li>To resolve disputes and troubleshoot problems</li>
-                <li>For billing and administration purposes</li>
-              </ul>
-            </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Disclosure of Your Information</h2>
-              <p className="text-gray-600 mb-4">
-                We may disclose your personal information to:
+              <p>
+                To ensure privacy for the Participant when discussing sensitive or personal matters, Vitality Community Care will only collect personal information that is necessary for the provision of services and support and given voluntarily to the Provider.
               </p>
-              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                <li>Our staff and contractors who need the information to perform their roles</li>
-                <li>Third-party service providers who assist us in operating our services</li>
-                <li>Healthcare professionals involved in your care</li>
-                <li>Government departments and agencies where required by law</li>
-                <li>Emergency services in case of an emergency</li>
-              </ul>
-              <p className="text-gray-600">
-                We will not sell, rent, or trade your personal information to any third party for marketing purposes.
-              </p>
-            </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Security</h2>
-              <p className="text-gray-600 mb-4">
-                We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage.
+              <p>
+                'Privacy & Confidentiality Policy' and 'Participant Consent Policy' have been documented in the 'Participant Handbook' and will be communicated with each participant during the initial assessment process.
               </p>
-              <p className="text-gray-600">
-                While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
-              </p>
-            </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Your Rights</h2>
-              <p className="text-gray-600 mb-4">
-                You have the right to:
+              <p>
+                Vitality Community Care will make sure that each participant understands and acknowledges what type of personal information, including recorded material in audio and/or visual format will be collected and for what reason.
               </p>
-              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                <li>Access your personal information</li>
-                <li>Request correction of inaccurate or incomplete information</li>
-                <li>Request deletion of your information where appropriate</li>
-                <li>Object to or restrict the processing of your information</li>
-                <li>Data portability</li>
-                <li>Withdraw consent where applicable</li>
-              </ul>
-            </div>
+              
+              <p>
+                All personal and confidential information will only be collected, used, retained, and disclosed by obtaining the Participant's consent. Please refer to the 'Privacy & Confidentiality Policy' in this 'Participant Handbook'.
+              </p>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
-              <p className="text-gray-600 mb-4">
-                If you have any questions about this Privacy Policy or our data practices, please contact us at:
+              <p>
+                Vitality Community Care will provide an interpreter if required for communication with the participant and respect to work with the participant's interpreter or representatives. Regular communications with participants have been planned and performed in a way that is identified during the initial assessment process and documented in the 'Initial Assessment & Support Plan'.
               </p>
-              <div className="text-gray-600">
-                <p><strong>Vitality Community Care</strong></p>
-                <p>Email: privacy@vitalitycommunitycare.com.au</p>
-                <p>Phone: 1300 395 852</p>
-                <p>Address: Melbourne, Victoria 3000, Australia</p>
-              </div>
+
+              <p>
+                Participants' dignity and right to privacy are also referred to in the 'Service Agreement'.
+              </p>
+
+              <p>
+                A copy of the 'Service Agreement' and 'Participant Handbook' will be provided to each participant.
+              </p>
+
+              <p>
+                Employees and workers are trained and inducted regarding the privacy and dignity policy. They have read, understood, and acknowledged this policy as well as the organizational requirements outlined in the 'Worker Handbook' through the induction process.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
-      {/* CTA Section */}
-      <section className="py-12 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image 
-            src="/disability-support-services-sm2.png" 
-            alt="Contact Vitality Community Care" 
-            fill
-            className="object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Have Questions About Our Privacy Policy?</h2>
-            <p className="text-lg mb-8">
-              Our team is here to help. Get in touch with us if you need further clarification.
-            </p>
-            <Link 
-              href="/contact-us" 
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-transparent border-2 border-white hover:bg-white hover:text-[#39A9E0] hover:shadow-lg transition duration-300 hover:-translate-y-1"
-            >
-              Contact Us <FaArrowRight className="ml-2" />
-            </Link>
+      {/* CTA Section - Kept similar to existing */}
+      <AnimatedSection variantType="fadeInUp" delay={0.2}>
+        <section className="py-12 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image 
+              src="/disability-support-services-sm2.png" 
+              alt="Contact Vitality Community Care" 
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
           </div>
-        </div>
-      </section>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Have Questions About Our Privacy & Dignity Policy?</h2>
+              <p className="text-lg mb-8">
+                Our team is here to help. Get in touch with us if you need further clarification.
+              </p>
+              <Link 
+                href="/contact-us" 
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-transparent border-2 border-white hover:bg-white hover:text-[#39A9E0] hover:shadow-lg transition duration-300 hover:-translate-y-1"
+              >
+                Contact Us <FaArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
     </div>
   );
 } 

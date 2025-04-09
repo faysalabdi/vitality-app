@@ -4,6 +4,7 @@ import ContactForm from '@/components/common/ContactForm';
 import { Metadata } from 'next';
 import { LocalBusinessStructuredData } from '@/components/common/StructuredData';
 import { FaArrowLeft, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 // Define metadata for this page
 export const metadata: Metadata = {
@@ -82,110 +83,124 @@ export default function ContactUsPage() {
       </section>
       
       {/* Contact Info Cards */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">          
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
-                  <FaPhone className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Phone</h3>
-                <p className="font-semibold text-lg" style={{ 
-                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                  display: 'inline-block',
-                }}>1300 395 852</p>
-              </div>
-              
-              <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#8BC53F]/10 text-[#8BC53F] mb-4">
-                  <FaClock className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Opening Hours</h3>
-                <p className="font-semibold text-lg" style={{ 
-                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                  display: 'inline-block',
-                }}>Mon – Sun: 9 am to 5 pm</p>
-              </div>
-              
-              <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
-                  <FaEnvelope className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Email</h3>
-                <p className="font-semibold text-lg" style={{ 
-                  background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                  display: 'inline-block',
-                }}>contact@vitalitycommunitycare.com.au</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Locations Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Locations</h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-              {locations.map((location, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <div className="h-[300px] w-full">
-                    <iframe 
-                      src={location.mapUrl} 
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen={false} 
-                      loading="lazy"
-                      title={`Map to ${location.name}`}
-                    ></iframe>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2" style={{ 
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">          
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <AnimatedSection variantType="zoomIn" delay={0.1}>
+                  <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
+                      <FaPhone className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Phone</h3>
+                    <p className="font-semibold text-lg" style={{ 
                       background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                       color: 'transparent',
-                      display: 'inline-block'
-                    }}>
-                      {location.name}
-                    </h3>
-                    <p className="text-gray-600">{location.address}</p>
+                      display: 'inline-block',
+                    }}>1300 395 852</p>
                   </div>
-                </div>
-              ))}
+                </AnimatedSection>
+                
+                <AnimatedSection variantType="zoomIn" delay={0.2}>
+                  <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#8BC53F]/10 text-[#8BC53F] mb-4">
+                      <FaClock className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Opening Hours</h3>
+                    <p className="font-semibold text-lg" style={{ 
+                      background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                      WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                      color: 'transparent',
+                      display: 'inline-block',
+                    }}>Mon – Sun: 9 am to 5 pm</p>
+                  </div>
+                </AnimatedSection>
+                
+                <AnimatedSection variantType="zoomIn" delay={0.3}>
+                  <div className="bg-white p-8 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#39A9E0]/10 text-[#39A9E0] mb-4">
+                      <FaEnvelope className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Email</h3>
+                    <p className="font-semibold text-lg" style={{ 
+                      background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                      WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                      color: 'transparent',
+                      display: 'inline-block',
+                    }}>contact@vitalitycommunitycare.com.au</p>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
+      
+      {/* Locations Section */}
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Locations</h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {locations.map((location, index) => (
+                  <AnimatedSection key={index} variantType="zoomIn" delay={index * 0.1}>
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                      <div className="h-[300px] w-full">
+                        <iframe 
+                          src={location.mapUrl} 
+                          width="100%" 
+                          height="100%" 
+                          style={{ border: 0 }} 
+                          allowFullScreen={false} 
+                          loading="lazy"
+                          title={`Map to ${location.name}`}
+                        ></iframe>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-2" style={{ 
+                          background: 'linear-gradient(90deg, #39A9E0, #8BC53F)',
+                          WebkitBackgroundClip: 'text',
+                          backgroundClip: 'text',
+                          color: 'transparent',
+                          display: 'inline-block'
+                        }}>
+                          {location.name}
+                        </h3>
+                        <p className="text-gray-600">{location.address}</p>
+                      </div>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
       
       {/* Contact Form Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Let's Get In Touch</h2>
-            <p className="text-center text-gray-600 mb-12">
-              If you have questions or want to discuss your needs, feel free to contact us. We're eager to hear from you and help.
-            </p>
-            
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <ContactForm />
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Let's Get In Touch</h2>
+              <p className="text-center text-gray-600 mb-12">
+                If you have questions or want to discuss your needs, feel free to contact us. We're eager to hear from you and help.
+              </p>
+              
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <ContactForm />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Add structured data for the contact page */}
       <LocalBusinessStructuredData 

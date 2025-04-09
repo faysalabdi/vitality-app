@@ -1,21 +1,46 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+
+// Define possible animation types
+type AnimationVariant = 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'zoomIn';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
   threshold?: number;
+  variantType?: AnimationVariant;
 }
+
+// Define the animation variants
+const animationVariants: Record<AnimationVariant, Variants> = {
+  fadeInUp: {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fadeInLeft: {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  },
+  fadeInRight: {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+  },
+  zoomIn: {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  },
+};
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   className = '',
   delay = 0,
-  threshold = 0.1 // Trigger animation when 10% of the element is visible
+  threshold = 0.1, // Trigger animation when 10% of the element is visible
+  variantType = 'fadeInUp' // Default to fadeInUp
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold, triggerOnce: true }); // triggerOnce ensures animation runs only once
@@ -26,25 +51,25 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     }
   }, [controls, inView]);
 
-  const variants = {
-    hidden: { opacity: 0, y: 50 }, // Start 50px below and invisible
-    visible: { 
-      opacity: 1, 
-      y: 0, // Move to original position and fade in
-      transition: { 
-        duration: 0.6, // Animation duration
-        delay: delay,   // Optional delay
-        ease: 'easeOut' // Easing function
-      } 
-    },
-  };
+  // Select the appropriate variants based on the prop
+  const selectedVariants = animationVariants[variantType];
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={controls}
-      variants={variants}
+      variants={{
+        hidden: selectedVariants.hidden,
+        visible: { 
+          ...selectedVariants.visible, 
+          transition: { 
+            duration: 0.6, 
+            delay: delay, 
+            ease: 'easeOut' 
+          } 
+        },
+      }}
       className={className}
     >
       {children}

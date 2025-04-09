@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { ServiceStructuredData } from '@/components/common/StructuredData';
+import AnimatedSection from '@/components/common/AnimatedSection';
 
 // Define metadata for this page
 export const metadata: Metadata = {
@@ -109,155 +110,175 @@ export default function AlliedHealthServicesPage() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Allied Health Services</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              At Vitality Community Care, we provide a range of high-quality allied health services delivered by qualified professionals. Our allied health team works collaboratively to address your individual needs and help you achieve your health and wellbeing goals.
-            </p>
-            <p className="text-lg text-gray-600">
-              Whether you require support through the NDIS, aged care services, or privately, our allied health professionals are committed to providing evidence-based interventions that enhance your function, independence, and quality of life.
-            </p>
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Allied Health Services</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                At Vitality Community Care, we provide a range of high-quality allied health services delivered by qualified professionals. Our allied health team works collaboratively to address your individual needs and help you achieve your health and wellbeing goals.
+              </p>
+              <p className="text-lg text-gray-600">
+                Whether you require support through the NDIS, aged care services, or privately, our allied health professionals are committed to providing evidence-based interventions that enhance your function, independence, and quality of life.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Services Overview */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {alliedHealthServices.map((service, index) => (
-              <div 
+              <AnimatedSection 
                 key={service.id} 
-                id={service.title.toLowerCase().replace(/\s+/g, '-')}
-                className={`mb-16 last:mb-0 grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                }`}
+                variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} 
+                delay={0.1}
+                className="mb-16 last:mb-0"
               >
-                <div className={`relative h-64 md:h-auto rounded-lg overflow-hidden ${
-                  index % 2 === 1 ? 'md:order-2' : ''
-                }`}>
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="flex items-center mb-4">
-                    <span className="text-3xl mr-4">{service.icon}</span>
-                    <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
+                <div 
+                  id={service.title.toLowerCase().replace(/\s+/g, '-')}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
+                    index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  }`}
+                >
+                  <div className={`relative h-64 md:h-auto rounded-lg overflow-hidden ${
+                    index % 2 === 1 ? 'md:order-2' : ''
+                  }`}>
+                    <Image 
+                      src={service.image} 
+                      alt={service.title} 
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <p className="text-gray-600 mb-6">{service.longDescription}</p>
-                  <Link 
-                    href="/contact-us" 
-                    className="inline-flex items-center font-medium"
-                    style={{ color: service.color }}
-                  >
-                    Inquire About This Service <FaArrowRight className="ml-2" />
-                  </Link>
+                  <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                    <div className="flex items-center mb-4">
+                      <span className="text-3xl mr-4">{service.icon}</span>
+                      <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
+                    </div>
+                    <p className="text-gray-600 mb-6">{service.longDescription}</p>
+                    <Link 
+                      href="/contact-us" 
+                      className="inline-flex items-center font-medium"
+                      style={{ color: service.color }}
+                    >
+                      Inquire About This Service <FaArrowRight className="ml-2" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* Our Approach */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Our Approach to Allied Health</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Comprehensive Assessment</h3>
-                <p className="text-gray-600 text-center">
-                  We begin with a thorough assessment to understand your unique needs, goals, and circumstances, allowing us to develop tailored intervention plans.
-                </p>
-              </div>
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Our Approach to Allied Health</h2>
               
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
-                <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Person-Centered Care</h3>
-                <p className="text-gray-600 text-center">
-                  We place you at the center of all decision-making, respecting your choices, preferences, and cultural background to ensure truly personalized care.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
-                <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Evidence-Based Practice</h3>
-                <p className="text-gray-600 text-center">
-                  Our interventions are grounded in the latest research and best practice guidelines, ensuring you receive effective, high-quality care.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
-                <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Collaborative Approach</h3>
-                <p className="text-gray-600 text-center">
-                  We work as a multidisciplinary team and collaborate with your other healthcare providers to ensure coordinated, comprehensive care.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <AnimatedSection variantType="zoomIn" delay={0.1}>
+                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                    <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
+                      <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Comprehensive Assessment</h3>
+                    <p className="text-gray-600 text-center">
+                      We begin with a thorough assessment to understand your unique needs, goals, and circumstances, allowing us to develop tailored intervention plans.
+                    </p>
+                  </div>
+                </AnimatedSection>
+                
+                <AnimatedSection variantType="zoomIn" delay={0.2}>
+                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                    <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
+                      <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Person-Centered Care</h3>
+                    <p className="text-gray-600 text-center">
+                      We place you at the center of all decision-making, respecting your choices, preferences, and cultural background to ensure truly personalized care.
+                    </p>
+                  </div>
+                </AnimatedSection>
+                
+                <AnimatedSection variantType="zoomIn" delay={0.1}>
+                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #39A9E0' }}>
+                    <div className="w-12 h-12 rounded-full bg-[#39A9E0]/10 flex items-center justify-center mb-4 mx-auto">
+                      <svg className="w-6 h-6 text-[#39A9E0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Evidence-Based Practice</h3>
+                    <p className="text-gray-600 text-center">
+                      Our interventions are grounded in the latest research and best practice guidelines, ensuring you receive effective, high-quality care.
+                    </p>
+                  </div>
+                </AnimatedSection>
+                
+                <AnimatedSection variantType="zoomIn" delay={0.2}>
+                  <div className="bg-gray-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-2" style={{ borderTop: '4px solid #8BC53F' }}>
+                    <div className="w-12 h-12 rounded-full bg-[#8BC53F]/10 flex items-center justify-center mb-4 mx-auto">
+                      <svg className="w-6 h-6 text-[#8BC53F]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Collaborative Approach</h3>
+                    <p className="text-gray-600 text-center">
+                      We work as a multidisciplinary team and collaborate with your other healthcare providers to ensure coordinated, comprehensive care.
+                    </p>
+                  </div>
+                </AnimatedSection>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="py-12 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image 
-            src="/pwd-support.png" 
-            alt="Contact Vitality Community Care about Allied Health Services" 
-            fill
-            className="object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Access Our Allied Health Services?</h2>
-            <p className="text-lg mb-8">
-              Contact us today to discuss how our allied health professionals can support your health and wellbeing goals.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                href="/contact-us" 
-                className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
-              >
-                Contact Us <FaArrowRight className="ml-2" />
-              </Link>
-              <Link 
-                href="/referral" 
-                className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
-              >
-                Make a Referral <FaArrowRight className="ml-2" />
-              </Link>
+      <AnimatedSection variantType="fadeInUp">
+        <section className="py-12 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image 
+              src="/pwd-support.png" 
+              alt="Contact Vitality Community Care about Allied Health Services" 
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Access Our Allied Health Services?</h2>
+              <p className="text-lg mb-8">
+                Contact us today to discuss how our allied health professionals can support your health and wellbeing goals.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link 
+                  href="/contact-us" 
+                  className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
+                >
+                  Contact Us <FaArrowRight className="ml-2" />
+                </Link>
+                <Link 
+                  href="/referral" 
+                  className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center"
+                >
+                  Make a Referral <FaArrowRight className="ml-2" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Back to Services Button */}
       <section className="py-8 bg-white">
