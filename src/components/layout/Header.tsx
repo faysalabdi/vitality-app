@@ -16,8 +16,8 @@ const Header = ({ isFixed = false }: HeaderProps) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Header classes with gradient background, no shadow
-  const headerClasses = `w-full relative z-50 ${isFixed ? 'fixed top-0 left-0 right-0' : ''} transition-colors duration-300 bg-gradient-to-r from-[#39A9E0] to-[#8BC53F]`;
+  // Header classes with solid blue background, no shadow
+  const headerClasses = `w-full relative z-50 ${isFixed ? 'fixed top-0 left-0 right-0' : ''} transition-colors duration-300 bg-[#39A9E0]`;
   const textClasses = 'text-white';
   const iconColorClasses = 'text-white';
   const hoverTextClasses = 'hover:text-gray-200';

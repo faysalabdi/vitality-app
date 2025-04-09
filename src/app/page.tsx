@@ -16,8 +16,7 @@ export const metadata: Metadata = {
   ],
 };
 
-import { HeroCarousel } from '@/components/sections/HeroCarousel';
-import { IntroSection } from '@/components/sections/IntroSection';
+import { HeroIntroSection } from '@/components/sections/HeroIntroSection';
 import { ReferralCTA } from '@/components/sections/ReferralCTA';
 import { BenefitsSection } from '@/components/sections/BenefitsSection';
 import { CertificationsSection } from '@/components/sections/CertificationsSection';
@@ -32,19 +31,17 @@ export default function Home() {
   return (
     <>
       <LocalBusinessStructuredData />
-      <IntroSection />
-      <BenefitsSection />
-      <HeroCarousel />
+      <HeroIntroSection />
       <StatsCounter />
-      
+      <BenefitsSection />
       <OurApproachSection />
 
       <Testimonials />
       <ExpandedServicesSection />
       <WorkWithUsSection />
       <CertificationsSection />
-      <ReferralCTA />
       <ContactForm />
+      <ReferralCTA />
     </>
   );
 }

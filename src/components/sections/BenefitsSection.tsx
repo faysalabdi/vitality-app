@@ -41,7 +41,7 @@ export const BenefitsSection = () => {
                 "Culturally sensitive services for diverse needs"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
-                  <FaCheck className="h-5 w-5 text-brand-blue mt-1 mr-3 flex-shrink-0" style={{ color: "#39A9E0" }} />
+                  <FaCheck className="h-5 w-5 text-brand-green mt-1 mr-3 flex-shrink-0" style={{ color: "#8BC53F" }} />
                   <span className="text-gray-700">{item}</span>
                 </li>
               ))}

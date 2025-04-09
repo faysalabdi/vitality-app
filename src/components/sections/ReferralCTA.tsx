@@ -12,7 +12,7 @@ export const ReferralCTA = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Ready to Refer?</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Or ready to Refer?</h2>
             <p className="text-base md:text-lg opacity-90">Submit Participant Details Here.</p>
           </div>
           <Link 
