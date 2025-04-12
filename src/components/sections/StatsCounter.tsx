@@ -68,10 +68,10 @@ const StatsCounter = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          <Counter end={5000} label="Hours of Care Delivered" suffix="+" />
-          <Counter end={250} label="Satisfied Clients" suffix="+" />
-          <Counter end={40} label="Dedicated Team Members" suffix="+" />
-          <Counter end={15} label="Years of Experience" suffix="+" />
+          <Counter end={500} label="Hours of Care Delivered" suffix="+" />
+          <Counter end={30} label="Satisfied Clients" suffix="+" />
+          <Counter end={10} label="Dedicated Team Members" suffix="+" />
+          <Counter end={3} label="Years of Experience" suffix="+" />
         </motion.div>
       </div>
     </section>
