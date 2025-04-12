@@ -16,7 +16,6 @@ export default function ServicesPageClient() {
   const heroImage = "/images/services-hero.jpg"; // Main hero image (update if needed)
   const decorativeImage = "/images/services-decorative.jpg"; // Decorative image (update if needed)
 
-  // Main service categories (copied from original page.tsx)
   const mainServices = [
     {
       id: 1,
@@ -223,42 +222,6 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      {/* Main Service Categories */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Main Service Categories</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {mainServices.map((service) => (
-              <div key={service.id} className="bg-gray-50 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                <div className="relative h-48">
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div 
-                  className="p-6"
-                  style={{ borderTop: `4px solid ${service.color}` }}
-                >
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <Link 
-                    href={service.link} 
-                    className="inline-flex items-center font-medium"
-                    style={{ color: service.color }}
-                  >
-                    Learn More <FaArrowRight className="ml-2" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* NDIS Services */}
       <section id="ndis-services" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -276,11 +239,19 @@ export default function ServicesPageClient() {
               >
                 <div className="p-6 flex flex-col items-center text-center">
                   <span className="text-3xl mb-4">{service.icon}</span>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-lg mb-2 text-gray-700">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/services/ndis"
+              className="inline-flex items-center justify-center bg-[#39A9E0] hover:bg-[#2a7fa9] text-white font-bold py-3 px-6 rounded-md shadow-md transition duration-300"
+            >
+              Learn More about NDIS Services <FaArrowRight className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>
@@ -302,11 +273,19 @@ export default function ServicesPageClient() {
               >
                 <div className="p-6 flex flex-col items-center text-center">
                   <span className="text-3xl mb-4">{service.icon}</span>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-lg mb-2 text-gray-700">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/services/aged-care"
+              className="inline-flex items-center justify-center bg-[#8BC53F] hover:bg-[#6a9b30] text-white font-bold py-3 px-6 rounded-md shadow-md transition duration-300"
+            >
+              Learn More about Aged Care Services <FaArrowRight className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>
@@ -328,11 +307,19 @@ export default function ServicesPageClient() {
               >
                 <div className="p-6 flex flex-col items-center text-center">
                   <span className="text-3xl mb-4">{service.icon}</span>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-lg mb-2 text-gray-700">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/services/allied-health"
+              className="inline-flex items-center justify-center bg-[#39A9E0] hover:bg-[#2a7fa9] text-white font-bold py-3 px-6 rounded-md shadow-md transition duration-300"
+            >
+              Learn More about Allied Health Services <FaArrowRight className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>
