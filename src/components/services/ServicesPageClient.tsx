@@ -13,8 +13,8 @@ export default function ServicesPageClient() {
   const title = "Our Services";
   const subtitle = "Tailored to Your Needs";
   const description = "At Vitality Community Care, we offer a wide range of personalized services, designed to meet your unique needs and help you live your best life.";
-  const heroImage = "/images/services-hero.jpg"; // Main hero image (update if needed)
-  const decorativeImage = "/images/services-decorative.jpg"; // Decorative image (update if needed)
+  const heroImage = "/icons/11045.jpg"; 
+  const decorativeImage = "/icons/4512026.jpg"; 
 
   const mainServices = [
     {
