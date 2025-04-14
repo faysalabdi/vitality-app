@@ -24,12 +24,13 @@ export default function ReferralPageClient() {
       {/* New Hero Section */}
       <section className="relative bg-[#39A9E0] text-white overflow-hidden py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center text-center gap-8">
             {/* Left Column: Text */}
              <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
@@ -37,7 +38,7 @@ export default function ReferralPageClient() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8">
                 {subtitle}
               </h2>
-              <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-xl text-white/90">
+              <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
               <a 
@@ -47,34 +48,6 @@ export default function ReferralPageClient() {
                 <span>Go to Referral Form</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </a>
-            </motion.div>
-            
-            {/* Right Column: Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
-            >
-              <div className="absolute -top-4 -right-8 w-48 h-48 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute -bottom-4 left-8 w-56 h-56 bg-white/10 rounded-full -z-10"></div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-5 left-5 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
-              >
-                {/* Replace with actual relevant images */} 
-                <Image src={heroImage} alt={title} fill className="object-cover bg-gray-200" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-5 right-5 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                 <Image src={decorativeImage} alt="Connecting people" fill className="object-cover bg-gray-200" sizes="(max-width: 1024px) 0vw, 256px"/>
-              </motion.div>
             </motion.div>
           </div>
         </div>

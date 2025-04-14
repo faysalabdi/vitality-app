@@ -69,12 +69,13 @@ export default function AlliedHealthServicesPageClient() {
       {/* New Hero Section */}
       <section className="relative bg-[#39A9E0] text-white overflow-hidden py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center text-center gap-8">
             {/* Left Column: Text */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
@@ -82,43 +83,16 @@ export default function AlliedHealthServicesPageClient() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8">
                 {subtitle}
               </h2>
-              <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-xl text-white/90">
+              <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
               <Link 
-                href="/contact-us#form" // Link to form section maybe?
+                href="/contact-us#form"
                 className="inline-flex items-center bg-white text-[#39A9E0] hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 text-base md:text-lg w-fit"
               >
                 <span>Enquire Now</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </Link>
-            </motion.div>
-            
-            {/* Right Column: Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
-            >
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: -3 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-0 left-0 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={heroImage} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 12 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 6 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-0 right-0 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={decorativeImage} alt="Health support" fill className="object-cover" sizes="(max-width: 1024px) 0vw, 256px"/>
-              </motion.div>
             </motion.div>
           </div>
         </div>
