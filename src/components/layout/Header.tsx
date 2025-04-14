@@ -35,7 +35,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
           <Link href="/">
             <div className="relative h-14 w-44">
               <Image 
-                src="/new-logo.png" 
+                src="/images/logo.png" 
                 alt="Vitality Community Care Logo" 
                 width={176} 
                 height={56} 
