@@ -85,6 +85,11 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                         Allied Health
                       </Link>
                     </li>
+                    <li className="py-1">
+                      <Link href="/services/supported-living" className="text-gray-700 hover:text-brand-blue block">
+                        Supported Living
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -128,6 +133,9 @@ const Header = ({ isFixed = false }: HeaderProps) => {
                   </li>
                   <li>
                     <Link href="/services/allied-health" className="text-gray-700 hover:text-brand-blue block py-1">Allied Health</Link>
+                  </li>
+                  <li>
+                    <Link href="/services/supported-living" className="text-gray-700 hover:text-brand-blue block py-1">Supported Living</Link>
                   </li>
                 </ul>
               </div>
