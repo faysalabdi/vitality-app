@@ -15,14 +15,14 @@ export const HeroIntroSection = () => {
   const introText2 = "Registered with NDIS, we offer a comprehensive range of customizable services that allow you to live your best life and make the most of your plan.";
   const introText3 = "Contact us today, and let's embark on a journey to better health and smashing goals.";
 
-  const images = [
-    { src: "/AdobeStock_423741997-scaled-1.jpeg", alt: "Caregiver assisting elderly person", className: "absolute top-0 left-0 w-64 h-48 rounded-lg shadow-lg transform -rotate-6" },
-    { src: "/front-view-woman-girl-couch.jpg", alt: "Woman and girl on couch", className: "absolute bottom-0 right-0 w-72 h-56 rounded-lg shadow-lg transform rotate-3" },
-    { src: "/friends-having-fun-together.jpg", alt: "Friends having fun", className: "absolute top-1/2 left-1/2 w-56 h-40 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2 rotate-1" },
-  ];
+  // Single hero image
+  const heroImage = {
+    src: "/Support-Worker-Branding.png",
+    alt: "Support worker helping elderly person with tablet"
+  };
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-[#39A9E0]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -59,28 +59,24 @@ export const HeroIntroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] md:h-[500px] hidden lg:block"
+            className="hidden lg:flex justify-center items-center"
           >
-            <div className="absolute top-10 right-10 w-32 h-32 bg-green-300/30 rounded-full -z-10"></div>
-            <div className="absolute bottom-10 left-10 w-40 h-40 bg-white/20 rounded-full -z-10"></div>
-            
-            {images.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className={img.className}
-              >
-                <Image 
-                  src={img.src} 
-                  alt={img.alt}
-                  width={300}
-                  height={200}
-                  className="object-cover w-full h-full rounded-lg shadow-lg"
-                />
-              </motion.div>
-            ))}
+            {/* Full hero image without cropping or borders */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-full max-w-lg"
+            >
+              <Image 
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={600}
+                height={600}
+                priority
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
