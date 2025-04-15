@@ -13,8 +13,7 @@ export default function ServicesPageClient() {
   const title = "Our Services";
   const subtitle = "Tailored to Your Needs";
   const description = "At Vitality Community Care, we offer a wide range of personalized services, designed to meet your unique needs and help you live your best life.";
-  const heroImage = "/icons/11045.jpg"; 
-  const decorativeImage = "/icons/4512026.jpg"; 
+  const heroImage = "/NDIS-1.png"; 
 
   const mainServices = [
     {
@@ -192,30 +191,28 @@ export default function ServicesPageClient() {
               </Link>
             </motion.div>
             
-            {/* Right Column: Images */}
+            {/* Right Column: Single Image */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
+              className="hidden lg:flex justify-center items-center"
             >
-              <div className="absolute -top-5 -right-5 w-40 h-40 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute bottom-10 left-10 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
+              {/* Full hero image without cropping or borders */}
               <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-0 right-0 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="w-full max-w-lg"
               >
-                <Image src={heroImage} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
-                 animate={{ opacity: 1, scale: 1, rotate: -6 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-0 left-0 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={decorativeImage} alt="Vitality Services" fill className="object-cover" sizes="(max-width: 1024px) 0vw, 256px"/>
+                <Image 
+                  src={heroImage}
+                  alt={title}
+                  width={600}
+                  height={600}
+                  priority
+                  className="w-full h-auto object-contain rounded-lg shadow-xl"
+                />
               </motion.div>
             </motion.div>
           </div>
