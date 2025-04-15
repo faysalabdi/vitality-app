@@ -26,7 +26,7 @@ const approaches = [
     id: 4,
     title: 'Empowerment Focus',
     description: 'We aim to build your skills and confidence, supporting your journey toward greater independence and community participation.',
-    iconSrc: '/NDIS-and-the-Healing-Power-of-Remedial-Massage-and-Myotherapy.jpg',
+    iconSrc: '/icons/4001240.jpg',
   },
   {
     id: 5,

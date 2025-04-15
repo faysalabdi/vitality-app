@@ -105,7 +105,7 @@ const WorkWithUsSection = () => {
             className="relative h-96 rounded-lg overflow-hidden"
           >
             <Image
-              src="/side-view-people-working-office.jpg"
+              src="/people-working-office.png"
               alt="Team members collaborating"
               fill
               style={{ objectFit: 'cover' }}
