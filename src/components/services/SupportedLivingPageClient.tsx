@@ -46,8 +46,8 @@ export default function SupportedLivingPageClient() {
       title: "Community Engagement",
       shortDescription: "Support to connect with your local community.",
       longDescription: "We encourage and support participation in community activities, social events, hobbies, and employment or volunteer opportunities, fostering social connections and a sense of belonging.",
-      icon: "🧑‍🤝‍🧑", // Placeholder icon
-      image: "/icons/Girls bringing puppy to woman in wheelchair.jpg", // Placeholder relevant image
+      icon: "🧑‍🤝‍🧑", 
+      image: "/icons/puppy.jpg", 
       color: accentColor
     }
   ];
