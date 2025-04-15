@@ -14,7 +14,7 @@ export default function AboutUsPageClient() {
   const title = "About Us";
   const subtitle = "Our Story & Values";
   const description = "Empowering individuals to live their best lives through compassionate and personalized care.";
-  const heroImage = "/Disabled-man-with-support-worker.jpeg"; 
+  const heroImage = "/icons/7921929.jpg"; 
   const decorativeImage = "/ndis-01.webp";
 
   return (

@@ -21,27 +21,27 @@ export default function AgedCareServicesPageClient() {
       id: 1,
       title: "Home Care Package",
       shortDescription: "Customized support services for older Australians living at home.",
-      longDescription: "Our Home Care Package services provide government-funded support tailored to your individual needs, enabling you to live independently at home.", // Expanded description
+      longDescription: "Our Home Care Package services provide government-funded support tailored to your individual needs, enabling you to live independently at home.", 
       icon: "🏡",
-      image: "/icons/care-elderly-abstract-concept-vector-illustration-eldercare-senior-homesick-nursing-care-services-happy-wheelchair-home-support-retired-people-nursing-home-abstract-metaphor_335657-1407.avif", // Updated path (already an icon)
+      image: "/icons/3875275.jpg", 
       color: "#8BC53F"
     },
     {
       id: 2,
       title: "Commonwealth Home Support Programme",
       shortDescription: "Entry-level support services for independent living at home.",
-      longDescription: "Our Commonwealth Home Support Programme (CHSP) services provide entry-level support for daily tasks to help you maintain your independence at home.", // Expanded description
+      longDescription: "Our Commonwealth Home Support Programme (CHSP) services provide entry-level support for daily tasks to help you maintain your independence at home.", 
       icon: "🇦🇺",
-      image: "/icons/4472381.jpg", // Updated path
+      image: "/icons/10133294.jpg", 
       color: "#39A9E0"
     },
     {
       id: 3,
       title: "Private Care",
       shortDescription: "Personalized care options outside of government-funded programs.",
-      longDescription: "Our Private Care services offer flexible, personalized care options tailored to your specific needs, outside of government-funded programs.", // Expanded description
+      longDescription: "Our Private Care services offer flexible, personalized care options tailored to your specific needs, outside of government-funded programs.", 
       icon: "👨‍⚕️",
-      image: "/icons/3875275.jpg", // Updated path
+      image: "/icons/4153070.jpg", 
       color: "#8BC53F"
     }
   ];

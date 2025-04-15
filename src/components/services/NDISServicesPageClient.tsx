@@ -9,75 +9,72 @@ import { motion } from 'framer-motion';
 
 // This component contains the client-side logic and UI
 export default function NDISServicesPageClient() {
-  const title = "NDIS Services";
+  const title = "NDIS Services"; 
   const subtitle = "Supporting Your Journey";
   const description = "As a registered NDIS provider, we offer comprehensive services tailored to help you achieve your goals, increase independence, and enhance your quality of life.";
-  const heroImage = "/psychology-support-person-wheelchair-woman-600nw-2167530617.webp"; // Path already points to /public/ (relative to it)
-  const decorativeImage = "/disability-support-services-sm2.png"; // Path already points to /public/ (relative to it)
 
   const ndisServices = [
-    // ... (same ndisServices array as before) ...
      {
       id: 1,
       title: "Daily Living Support",
       shortDescription: "Assistance with everyday tasks to maintain independence and comfort at home.",
-      longDescription: "Our Daily Living Support services help you with everyday tasks at home, such as personal care, meal preparation, and household chores, promoting independence.", // Expanded description
+      longDescription: "Our Daily Living Support services help you with everyday tasks at home, such as personal care, meal preparation, and household chores, promoting independence.", 
       icon: "🏠",
-      image: "/icons/disability-support-services-sm2.png", // Updated path (already an icon)
+      image: "/icons/75z_2202_w009_n001_102b_p14_102.jpg", 
       color: "#39A9E0"
     },
     {
       id: 2,
       title: "Community Participation",
       shortDescription: "Supporting engagement in community activities and building social connections.",
-      longDescription: "Our Community Participation services support you to engage in social and recreational activities, helping you build connections and participate in your community.", // Expanded description
+      longDescription: "Our Community Participation services support you to engage in social and recreational activities, helping you build connections and participate in your community.", 
       icon: "👥",
-      image: "/icons/10477798.jpg", // Updated path
+      image: "/icons/9046651.jpg",
       color: "#8BC53F"
     },
     {
       id: 3,
       title: "Accommodation",
       shortDescription: "Supported Independent Living (SIL) and Respite Care services.",
-      longDescription: "Our Accommodation services include Supported Independent Living (SIL) and Respite Care, providing safe and supportive living environments.", // Expanded description
+      longDescription: "Our Accommodation services include Supported Independent Living (SIL) and Respite Care, providing safe and supportive living environments.", 
       icon: "🏘️",
-      image: "/icons/1316.jpg", // Updated path
+      image: "/icons/1316.jpg", 
       color: "#39A9E0"
     },
     {
       id: 4,
       title: "Transport",
       shortDescription: "Safe and reliable transportation to appointments, activities, and more.",
-      longDescription: "Our Transport services provide safe and reliable transportation for appointments, community access, and other travel needs you may have.", // Expanded description
+      longDescription: "Our Transport services provide safe and reliable transportation for appointments, community access, and other travel needs you may have.", 
       icon: "🚗",
-      image: "/icons/pwd-support.png", // Updated path (already an icon)
+      image: "/icons/8531154.jpg", 
       color: "#8BC53F"
     },
     {
       id: 5,
       title: "Support Coordination",
       shortDescription: "Help navigating the NDIS and connecting with the right service providers.",
-      longDescription: "Our Support Coordination services help you navigate the NDIS, understand your plan, and connect with the right providers to achieve your goals.", // Expanded description
+      longDescription: "Our Support Coordination services help you navigate the NDIS, understand your plan, and connect with the right providers to achieve your goals.", 
       icon: "📋",
-      image: "/icons/psychology-support-person-wheelchair-woman-600nw-2167530617.webp", // Updated path (already an icon)
+      image: "/icons/4472381.jpg", 
       color: "#39A9E0"
     },
     {
       id: 6,
       title: "Cleaning",
       shortDescription: "Professional cleaning services to maintain a hygienic and comfortable living environment.",
-      longDescription: "Our Cleaning services help maintain a hygienic and comfortable living environment, assisting with various household cleaning tasks.", // Expanded description
+      longDescription: "Our Cleaning services help maintain a hygienic and comfortable living environment, assisting with various household cleaning tasks.", 
       icon: "✨",
-      image: "/icons/4512026.jpg", // Updated path
+      image: "/icons/7480278.jpg", 
       color: "#8BC53F"
     },
     {
       id: 7,
       title: "Early Childhood",
       shortDescription: "Specialized support for young children with developmental needs.",
-      longDescription: "Our Early Childhood services provide specialized support for young children with developmental delays or disabilities, focusing on early intervention.", // Expanded description
+      longDescription: "Our Early Childhood services provide specialized support for young children with developmental delays or disabilities, focusing on early intervention.", 
       icon: "👶",
-      image: "/icons/11045.jpg", // Updated path
+      image: "/icons/11045.jpg", 
       color: "#39A9E0"
     }
   ];

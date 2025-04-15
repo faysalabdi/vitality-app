@@ -23,7 +23,7 @@ export default function AlliedHealthServicesPageClient() {
       shortDescription: "Physical therapy to improve movement, function, and quality of life.",
       longDescription: "Our Physiotherapy services help improve your movement, function, and quality of life through targeted exercises, manual therapy, and education.", // Expanded description
       icon: "💪",
-      image: "/icons/7921929.jpg", // Updated path
+      image: "/icons/4232156.jpg", // Updated path
       color: "#39A9E0"
     },
     {
@@ -32,7 +32,7 @@ export default function AlliedHealthServicesPageClient() {
       shortDescription: "Professional support to address behavioral challenges and develop positive strategies.",
       longDescription: "Our Behaviour Support services help individuals who may display behaviors of concern by developing positive strategies and support plans.", // Expanded description
       icon: "🧠",
-      image: "/icons/psychology-support-person-wheelchair-woman-600nw-2167530617.webp", // Updated path (already an icon)
+      image: "/icons/5018555.jpg", // Updated path (already an icon)
       color: "#8BC53F"
     },
     {
@@ -41,7 +41,7 @@ export default function AlliedHealthServicesPageClient() {
       shortDescription: "Mental health support for emotional well-being and psychological resilience.",
       longDescription: "Our Psychology services provide professional mental health support, counseling, and therapy to improve emotional well-being and resilience.", // Expanded description
       icon: "🧩",
-      image: "/icons/75z_2202_w009_n001_102b_p14_102.jpg", // Updated path
+      image: "/icons/6276064.jpg", 
       color: "#39A9E0"
     },
     {
@@ -50,7 +50,7 @@ export default function AlliedHealthServicesPageClient() {
       shortDescription: "Guidance and support for individuals recovering from injury or managing disability.",
       longDescription: "Our Rehabilitation Counselling services provide guidance and support to help individuals return to work or daily life after injury or disability.", // Expanded description
       icon: "🤲",
-      image: "/icons/pwd-support.png", // Updated path (already an icon)
+      image: "/icons/6974035.jpg",
       color: "#8BC53F"
     },
     {
@@ -59,7 +59,7 @@ export default function AlliedHealthServicesPageClient() {
       shortDescription: "Expert nutrition advice tailored to individual health needs and goals.",
       longDescription: "Our Dietitian services provide expert nutrition advice and personalized meal plans to support your health goals and manage dietary needs.", // Expanded description
       icon: "🥗",
-      image: "/icons/10133294.jpg", // Updated path
+      image: "/icons/7985393.jpg", 
       color: "#39A9E0"
     }
   ];
