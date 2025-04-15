@@ -78,7 +78,7 @@ export default function SupportedLivingPageClient() {
                 href="/contact-us"
                 className="inline-flex items-center bg-white text-teal-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 text-base md:text-lg w-fit"
               >
-                <span>Get Started</span>
+                <span>Contact Us</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </Link>
             </motion.div>
@@ -145,7 +145,7 @@ export default function SupportedLivingPageClient() {
                         backgroundColor: service.color,
                         borderColor: service.color
                       }}>
-                      Contact Us <FaArrowRight className="ml-2" />
+                      Get Started <FaArrowRight className="ml-2" />
                     </Link>
                   </div>
                 </div>
