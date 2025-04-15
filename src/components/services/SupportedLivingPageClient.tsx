@@ -145,7 +145,7 @@ export default function SupportedLivingPageClient() {
                         backgroundColor: service.color,
                         borderColor: service.color
                       }}>
-                      Get started <FaArrowRight className="ml-2" />
+                      Contact Us <FaArrowRight className="ml-2" />
                     </Link>
                   </div>
                 </div>
