@@ -145,7 +145,7 @@ export default function SupportedLivingPageClient() {
                         backgroundColor: service.color,
                         borderColor: service.color
                       }}>
-                      Get Started <FaArrowRight className="ml-2" />
+                      Inquire about this service <FaArrowRight className="ml-2" />
                     </Link>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function SupportedLivingPageClient() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link href="/contact-us"
                   className="bg-white text-teal-700 hover:bg-teal-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">
-                    Inquire about this service <FaArrowRight className="ml-2" />
+                    Contact Us <FaArrowRight className="ml-2" />
                 </Link>
                 <Link href="/referral"
                   className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-indigo-900 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">
