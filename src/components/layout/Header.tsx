@@ -66,13 +66,15 @@ const Header = ({ isFixed = false }: HeaderProps) => {
               
               {/* Services Dropdown (Simplified & Highlighted) */}
               <li className="relative group">
-                <Link href="/services" className={`font-medium flex items-center ${pathname.startsWith('/services') ? 'text-blue-800' : 'text-white hover:text-brand-green'}`}>
+                <Link href="/services" className={`font-medium flex items-center ${pathname === '/services' || pathname === '/services/ndis' || pathname === '/services/aged-care' || pathname === '/services/allied-health' ? 'text-blue-800' : 'text-white hover:text-brand-green'}`}>
                   Services
                   <FaChevronDown className="ml-1 text-xs" />
                 </Link>
-                <div className="absolute left-0 top-full pt-3 hidden group-hover:block z-50">
+                <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  {/* Hover trigger area to prevent dropdown from closing too easily */}
+                  <div className="absolute h-3 w-full top-0 left-0"></div>
                   {/* Simplified dropdown content */}
-                  <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52">
+                  <ul className="bg-white shadow-lg rounded-md p-3 z-10 min-w-52 transform origin-top scale-95 group-hover:scale-100 transition-transform duration-300">
                     <li className="py-1">
                       <Link href="/services/ndis" className="text-gray-700 hover:text-brand-blue block">
                         NDIS
@@ -119,7 +121,7 @@ const Header = ({ isFixed = false }: HeaderProps) => {
             <li>
               <div className="flex flex-col">
                 <div className="flex items-center justify-between py-2">
-                  <Link href="/services" className={`font-medium ${pathname.startsWith('/services') ? 'text-blue-800' : 'text-gray-700 hover:text-brand-green'}`}>Services</Link>
+                  <Link href="/services" className={`font-medium ${pathname === '/services' || pathname === '/services/ndis' || pathname === '/services/aged-care' || pathname === '/services/allied-health' ? 'text-blue-800' : 'text-gray-700 hover:text-brand-green'}`}>Services</Link>
                   <button 
                     onClick={toggleServicesMenu}
                     className="text-gray-600 hover:text-gray-800 focus:outline-none"
