@@ -14,8 +14,8 @@ export default function AboutUsPageClient() {
   const title = "About Us";
   const subtitle = "Our Story & Values";
   const description = "Empowering individuals to live their best lives through compassionate and personalized care.";
-  const heroImage = "/pwd-support.png"; 
-  const decorativeImage = "/friends-having-fun-together.jpg";
+  const heroImage = "/icons/7921929.jpg"; 
+  const decorativeImage = "/ndis-01.webp";
 
   return (
     <div className="min-h-screen">
@@ -178,42 +178,6 @@ export default function AboutUsPageClient() {
                   <h4 className="text-xl font-semibold text-gray-800 mb-2 text-center">Empowerment</h4>
                   <p className="text-gray-600 text-center">We aim to help individuals gain confidence... achieve their personal goals.</p>
                 </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Team */}
-      <AnimatedSection>
-        <section className="py-16 bg-white">
-          {/* ... Team content ... */}
-           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Leadership Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <AnimatedSection delay={0.1}>
-                 <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2 h-full">
-                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden"><div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">JD</div></div>
-                   <h3 className="text-xl font-semibold text-gray-800 mb-1">Hamza Abdiwahab</h3>
-                   <p className="mb-4 font-bold" style={{ background: 'linear-gradient(90deg, #39A9E0, #8BC53F)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', display: 'inline-block'}}>Founder & CEO</p>
-                   <p className="text-gray-600 mb-4">Hamza founded Vitality Community Care with a vision...</p>
-                 </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                 <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2 h-full">
-                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden"><div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">JS</div></div>
-                   <h3 className="text-xl font-semibold text-gray-800 mb-1">Azhaar Abdiwahab</h3>
-                   <p className="mb-4 font-bold" style={{ background: 'linear-gradient(90deg, #39A9E0, #8BC53F)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', display: 'inline-block'}}>Clinical Director</p>
-                   <p className="text-gray-600 mb-4">Azhaar brings her extensive background...</p>
-                 </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                 <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2 h-full">
-                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden"><div className="w-full h-full bg-gradient-to-br from-[#39A9E0] to-[#8BC53F] flex items-center justify-center text-white text-2xl font-bold">SC</div></div>
-                   <h3 className="text-xl font-semibold text-gray-800 mb-1">Faysal Abdiwahab</h3>
-                   <p className="mb-4 font-bold" style={{ background: 'linear-gradient(90deg, #39A9E0, #8BC53F)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', display: 'inline-block'}}>NDIS Services Manager</p>
-                   <p className="text-gray-600 mb-4">Faysal specializes in NDIS service delivery...</p>
-                 </div>
               </AnimatedSection>
             </div>
           </div>

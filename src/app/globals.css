@@ -25,6 +25,8 @@
   }
 }
 
+/* Remove this body rule as it might conflict with Tailwind utilities and the rule in @layer base */
+/*
 body {
   background: var(--background);
   color: var(--foreground);
@@ -32,6 +34,7 @@ body {
   position: relative;
   z-index: 0;
 }
+*/
 
 body::before {
   content: "";

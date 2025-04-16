@@ -9,75 +9,72 @@ import { motion } from 'framer-motion';
 
 // This component contains the client-side logic and UI
 export default function NDISServicesPageClient() {
-  const title = "NDIS Services";
+  const title = "NDIS Services"; 
   const subtitle = "Supporting Your Journey";
   const description = "As a registered NDIS provider, we offer comprehensive services tailored to help you achieve your goals, increase independence, and enhance your quality of life.";
-  const heroImage = "/psychology-support-person-wheelchair-woman-600nw-2167530617.webp"; // Example image 1
-  const decorativeImage = "/disability-support-services-sm2.png"; // Example image 2
 
   const ndisServices = [
-    // ... (same ndisServices array as before) ...
      {
       id: 1,
       title: "Daily Living Support",
       shortDescription: "Assistance with everyday tasks to maintain independence and comfort at home.",
-      longDescription: "Our Daily Living Support services help you with everyday tasks at home...",
+      longDescription: "Our Daily Living Support services help you with everyday tasks at home, such as personal care, meal preparation, and household chores, promoting independence.", 
       icon: "🏠",
-      image: "/disability-support-services-sm2.png",
+      image: "/icons/75z_2202_w009_n001_102b_p14_102.jpg", 
       color: "#39A9E0"
     },
     {
       id: 2,
       title: "Community Participation",
       shortDescription: "Supporting engagement in community activities and building social connections.",
-      longDescription: "Our Community Participation services support you to engage in social and recreational activities...",
+      longDescription: "Our Community Participation services support you to engage in social and recreational activities, helping you build connections and participate in your community.", 
       icon: "👥",
-      image: "/friends-having-fun-together.jpg",
+      image: "/icons/9046651.jpg",
       color: "#8BC53F"
     },
     {
       id: 3,
       title: "Accommodation",
       shortDescription: "Supported Independent Living (SIL) and Respite Care services.",
-      longDescription: "Our Accommodation services include Supported Independent Living (SIL)...",
+      longDescription: "Our Accommodation services include Supported Independent Living (SIL) and Respite Care, providing safe and supportive living environments.", 
       icon: "🏘️",
-      image: "/front-view-woman-girl-couch.jpg",
+      image: "/icons/1316.jpg", 
       color: "#39A9E0"
     },
     {
       id: 4,
       title: "Transport",
       shortDescription: "Safe and reliable transportation to appointments, activities, and more.",
-      longDescription: "Our Transport services provide safe and reliable transportation...",
+      longDescription: "Our Transport services provide safe and reliable transportation for appointments, community access, and other travel needs you may have.", 
       icon: "🚗",
-      image: "/pwd-support.png",
+      image: "/icons/8531154.jpg", 
       color: "#8BC53F"
     },
     {
       id: 5,
       title: "Support Coordination",
       shortDescription: "Help navigating the NDIS and connecting with the right service providers.",
-      longDescription: "Our Support Coordination services help you navigate the NDIS...",
+      longDescription: "Our Support Coordination services help you navigate the NDIS, understand your plan, and connect with the right providers to achieve your goals.", 
       icon: "📋",
-      image: "/psychology-support-person-wheelchair-woman-600nw-2167530617.webp",
+      image: "/icons/4472381.jpg", 
       color: "#39A9E0"
     },
     {
       id: 6,
       title: "Cleaning",
       shortDescription: "Professional cleaning services to maintain a hygienic and comfortable living environment.",
-      longDescription: "Our Cleaning services help maintain a hygienic and comfortable living environment...",
+      longDescription: "Our Cleaning services help maintain a hygienic and comfortable living environment, assisting with various household cleaning tasks.", 
       icon: "✨",
-      image: "/AdobeStock_423741997-scaled-1.jpeg",
+      image: "/icons/7480278.jpg", 
       color: "#8BC53F"
     },
     {
       id: 7,
       title: "Early Childhood",
       shortDescription: "Specialized support for young children with developmental needs.",
-      longDescription: "Our Early Childhood services provide specialized support for young children...",
+      longDescription: "Our Early Childhood services provide specialized support for young children with developmental delays or disabilities, focusing on early intervention.", 
       icon: "👶",
-      image: "/side-view-people-working-office.jpg",
+      image: "/icons/11045.jpg", 
       color: "#39A9E0"
     }
   ];
@@ -87,12 +84,13 @@ export default function NDISServicesPageClient() {
       {/* New Hero Section */}
       <section className="relative bg-[#39A9E0] text-white overflow-hidden py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center text-center gap-8">
             {/* Left Column: Text */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
@@ -100,7 +98,7 @@ export default function NDISServicesPageClient() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8">
                 {subtitle}
               </h2>
-              <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-xl text-white/90">
+              <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
               {/* Optional: Add a CTA if needed */}
@@ -111,33 +109,6 @@ export default function NDISServicesPageClient() {
                 <span>Make a Referral</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </Link>
-            </motion.div>
-            
-            {/* Right Column: Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
-            >
-              <div className="absolute -top-5 -right-5 w-40 h-40 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute bottom-10 left-10 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-0 right-0 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={heroImage} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
-                 animate={{ opacity: 1, scale: 1, rotate: -6 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-0 left-0 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={decorativeImage} alt="Support services" fill className="object-cover" sizes="(max-width: 1024px) 0vw, 256px"/>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -160,41 +131,41 @@ export default function NDISServicesPageClient() {
         </section>
       </AnimatedSection>
 
-      {/* Services Overview (now with gray bg) */}
-      <section className="py-16 bg-gray-50"> {/* Added bg-gray-50 */}
+      {/* Services Overview (now with gray bg) - Rebuilt with alternating layout */}
+      <section className="py-16 bg-gray-50"> 
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="space-y-16"> {/* Add spacing between service blocks */}
             {ndisServices.map((service, index) => (
               <AnimatedSection 
                 key={service.id} 
                 variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} 
                 delay={0.1}
-                className="mb-16 last:mb-0"
               >
                 <div 
                   id={service.title.toLowerCase().replace(/\s+/g, '-')}
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                    index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                  }`}
+                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
                 >
-                   {/* ... service item content ... */}
-                   <div className={`relative h-64 md:h-auto rounded-lg overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                      <Image src={service.image} alt={service.title} fill className="object-cover"/>
+                  {/* Image Column */}
+                  <div className="w-full md:w-1/2 flex-shrink-0">
+                    <div className={`relative aspect-video rounded-lg overflow-hidden mx-auto max-w-lg md:max-w-none`}>
+                      <Image src={service.image} alt={service.title} fill className="object-contain"/>
                     </div>
-                    <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                      <div className="flex items-center mb-4">
-                        <span className="text-3xl mr-4">{service.icon}</span>
-                        <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
-                      </div>
-                      <p className="text-gray-600 mb-6">{service.longDescription}</p>
-                      <Link 
-                        href="/contact-us#contact-form"
-                        className="inline-flex items-center font-medium"
-                        style={{ color: service.color }}
-                      >
-                        Inquire About This Service <FaArrowRight className="ml-2" />
-                      </Link>
+                  </div>
+                  {/* Text Column */}
+                  <div className="w-full md:w-1/2 text-center md:text-left">
+                    <div className="inline-flex items-center justify-center md:justify-start mb-4">
+                      <span className="text-3xl mr-4">{service.icon}</span>
+                      <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
                     </div>
+                    <p className="text-gray-600 mb-6 mx-auto md:mx-0 max-w-md">{service.longDescription}</p>
+                    <Link 
+                      href="/contact-us#contact-form"
+                      className="inline-flex items-center font-medium"
+                      style={{ color: service.color }}
+                    >
+                      Inquire About This Service <FaArrowRight className="ml-2" />
+                    </Link>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -235,7 +206,7 @@ export default function NDISServicesPageClient() {
       <AnimatedSection variantType="zoomIn">
         <section className="py-12 relative overflow-hidden">
           {/* ... CTA content ... */}
-           <div className="absolute inset-0"><Image src="/psychology-support-person-wheelchair-woman-600nw-2167530617.webp" alt="Contact Vitality Community Care about NDIS Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your NDIS Journey?</h2> <p className="text-lg mb-8">Contact us today to discuss how our NDIS services can support you...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
+           <div className="absolute inset-0"><Image src="/icons/psychology-support-person-wheelchair-woman-600nw-2167530617.webp" alt="Contact Vitality Community Care about NDIS Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your NDIS Journey?</h2> <p className="text-lg mb-8">Contact us today to discuss how our NDIS services can support you...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
         </section>
       </AnimatedSection>
 

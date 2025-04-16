@@ -12,8 +12,8 @@ export default function AgedCareServicesPageClient() {
   const title = "Aged Care Services";
   const subtitle = "Dignity & Independence";
   const description = "We provide compassionate aged care services that promote dignity, independence, and quality of life for seniors in the comfort of their own homes.";
-  const heroImage = "/care-elderly-abstract-concept-vector-illustration-eldercare-senior-homesick-nursing-care-services-happy-wheelchair-home-support-retired-people-nursing-home-abstract-metaphor_335657-1407.avif"; // Example image 1
-  const decorativeImage = "/AdobeStock_423741997-scaled-1.jpeg"; // Example image 2
+  const heroImage = "/care-elderly-abstract-concept-vector-illustration-eldercare-senior-homesick-nursing-care-services-happy-wheelchair-home-support-retired-people-nursing-home-abstract-metaphor_335657-1407.avif"; // Path already points to /public/ (relative to it)
+  const decorativeImage = "/AdobeStock_423741997-scaled-1.jpeg"; // Using image from /public/
   
   const agedCareServices = [
     // ... (same agedCareServices array as before) ...
@@ -21,27 +21,27 @@ export default function AgedCareServicesPageClient() {
       id: 1,
       title: "Home Care Package",
       shortDescription: "Customized support services for older Australians living at home.",
-      longDescription: "Our Home Care Package services provide government-funded support...",
+      longDescription: "Our Home Care Package services provide government-funded support tailored to your individual needs, enabling you to live independently at home.", 
       icon: "🏡",
-      image: "/care-elderly-abstract-concept-vector-illustration-eldercare-senior-homesick-nursing-care-services-happy-wheelchair-home-support-retired-people-nursing-home-abstract-metaphor_335657-1407.avif",
+      image: "/icons/3875275.jpg", 
       color: "#8BC53F"
     },
     {
       id: 2,
       title: "Commonwealth Home Support Programme",
       shortDescription: "Entry-level support services for independent living at home.",
-      longDescription: "Our Commonwealth Home Support Programme (CHSP) services provide entry-level support...",
+      longDescription: "Our Commonwealth Home Support Programme (CHSP) services provide entry-level support for daily tasks to help you maintain your independence at home.", 
       icon: "🇦🇺",
-      image: "/AdobeStock_423741997-scaled-1.jpeg",
+      image: "/icons/10133294.jpg", 
       color: "#39A9E0"
     },
     {
       id: 3,
       title: "Private Care",
       shortDescription: "Personalized care options outside of government-funded programs.",
-      longDescription: "Our Private Care services offer flexible, personalized care options...",
+      longDescription: "Our Private Care services offer flexible, personalized care options tailored to your specific needs, outside of government-funded programs.", 
       icon: "👨‍⚕️",
-      image: "/friends-having-fun-together.jpg",
+      image: "/icons/4153070.jpg", 
       color: "#8BC53F"
     }
   ];
@@ -51,12 +51,13 @@ export default function AgedCareServicesPageClient() {
       {/* New Hero Section */}
       <section className="relative bg-[#39A9E0] text-white overflow-hidden py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center text-center gap-8"> 
              {/* Left Column: Text */}
              <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
@@ -64,7 +65,7 @@ export default function AgedCareServicesPageClient() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8">
                 {subtitle}
               </h2>
-              <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-xl text-white/90">
+              <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
               <Link 
@@ -74,33 +75,6 @@ export default function AgedCareServicesPageClient() {
                 <span>Contact Us</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </Link>
-            </motion.div>
-            
-            {/* Right Column: Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
-            >
-              <div className="absolute -top-5 -right-5 w-40 h-40 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute bottom-10 left-10 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-0 right-0 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={heroImage} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
-                 animate={{ opacity: 1, scale: 1, rotate: -6 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-0 left-0 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={decorativeImage} alt="Elderly care support" fill className="object-cover" sizes="(max-width: 1024px) 0vw, 256px"/>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -124,30 +98,41 @@ export default function AgedCareServicesPageClient() {
         </section>
       </AnimatedSection>
 
-      {/* Services Overview (gray bg) */}
+      {/* Services Overview (gray bg) - Rebuilt with alternating layout */}
       <section className="py-16 bg-gray-50">
-         {/* ... services overview content ... */}
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              {agedCareServices.map((service, index) => (
-                <AnimatedSection key={service.id} variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} delay={0.1} className="mb-16 last:mb-0">
-                  <div id={service.title.toLowerCase().replace(/\s+/g, '-')} className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                     <div className={`relative h-64 md:h-auto rounded-lg overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}><Image src={service.image} alt={service.title} fill className="object-cover"/></div>
-                      <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                        <div className="flex items-center mb-4"><span className="text-3xl mr-4">{service.icon}</span><h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3></div>
-                        <p className="text-gray-600 mb-6">{service.longDescription}</p>
-                        <Link 
-                          href="/contact-us#contact-form"
-                          className="inline-flex items-center font-medium" 
-                          style={{ color: service.color }}>
-                          Inquire About This Service <FaArrowRight className="ml-2" />
-                        </Link>
-                      </div>
+        <div className="container mx-auto px-4">
+          <div className="space-y-16"> {/* Add spacing between service blocks */}
+            {agedCareServices.map((service, index) => (
+              <AnimatedSection key={service.id} variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} delay={0.1}>
+                <div 
+                  id={service.title.toLowerCase().replace(/\s+/g, '-')}
+                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Image Column */}
+                  <div className="w-full md:w-1/2 flex-shrink-0">
+                    <div className={`relative aspect-video rounded-lg overflow-hidden mx-auto max-w-lg md:max-w-none`}>
+                      <Image src={service.image} alt={service.title} fill className="object-contain"/>
+                    </div>
                   </div>
-                </AnimatedSection>
-              ))}
-            </div>
+                  {/* Text Column */}
+                  <div className="w-full md:w-1/2 text-center md:text-left">
+                    <div className="inline-flex items-center justify-center md:justify-start mb-4">
+                      <span className="text-3xl mr-4">{service.icon}</span>
+                      <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
+                    </div>
+                    <p className="text-gray-600 mb-6 mx-auto md:mx-0 max-w-md">{service.longDescription}</p>
+                    <Link 
+                      href="/contact-us#contact-form"
+                      className="inline-flex items-center font-medium"
+                      style={{ color: service.color }}>
+                      Inquire About This Service <FaArrowRight className="ml-2" />
+                    </Link>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
+        </div>
       </section>
 
       {/* Why Choose Us (white bg) */}
@@ -172,7 +157,7 @@ export default function AgedCareServicesPageClient() {
       <AnimatedSection variantType="fadeInUp">
         <section className="py-12 relative overflow-hidden">
           {/* ... CTA content ... */}
-           <div className="absolute inset-0"><Image src="/AdobeStock_423741997-scaled-1.jpeg" alt="Contact Vitality Community Care about Aged Care Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Discuss Your Aged Care Needs?</h2> <p className="text-lg mb-8">Contact us today to learn more about our aged care services...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
+           <div className="absolute inset-0"><Image src="/icons/10624470.jpg" alt="Contact Vitality Community Care about Aged Care Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Discuss Your Aged Care Needs?</h2> <p className="text-lg mb-8">Contact us today to learn more about our aged care services...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
         </section>
       </AnimatedSection>
 

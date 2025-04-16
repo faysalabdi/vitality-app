@@ -25,7 +25,7 @@ const servicesData = [
     id: 3,
     title: 'Supported Independent Living',
     description: 'Comprehensive support in your home environment, helping you develop skills for independent living while providing necessary assistance.',
-    imageUrl: '/ormond-victoria-australia-march-17-600nw-2438632631.webp',
+    imageUrl: '/sil.jpg',
     link: '/services#independent-living',
     features: ['Household Management', 'Budgeting Skills', 'Shopping Assistance', 'Life Skills Development']
   },
@@ -33,7 +33,7 @@ const servicesData = [
     id: 4,
     title: 'Therapy Services',
     description: 'Professional therapy services including occupational therapy, speech therapy, and physiotherapy to support your physical and developmental needs.',
-    imageUrl: '/psychology-support-person-wheelchair-woman-600nw-2167530617.webp',
+    imageUrl: '/therapy.jpg',
     link: '/services#therapy',
     features: ['Occupational Therapy', 'Physiotherapy', 'Speech Therapy', 'Behavioral Support']
   },
@@ -49,7 +49,7 @@ const servicesData = [
     id: 6,
     title: 'Support Coordination',
     description: 'Expert assistance in navigating the NDIS, connecting with suitable service providers, and ensuring your support plan meets your changing needs and goals.',
-    imageUrl: '/ndis-01.webp',
+    imageUrl: '/support.jpg',
     link: '/services#coordination',
     features: ['NDIS Plan Management', 'Service Provider Liaison', 'Goal Setting Support', 'Plan Reviews']
   }

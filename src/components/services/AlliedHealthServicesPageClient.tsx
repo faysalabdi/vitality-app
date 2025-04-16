@@ -12,8 +12,8 @@ export default function AlliedHealthServicesPageClient() {
   const title = "Allied Health Services";
   const subtitle = "Expert Professional Care";
   const description = "Our team of qualified allied health professionals provides specialized services to improve your health, wellbeing, and quality of life.";
-  const heroImage = "/NDIS-and-the-Healing-Power-of-Remedial-Massage-and-Myotherapy.jpg"; // Example image 1
-  const decorativeImage = "/pwd-support.png"; // Example image 2
+  const heroImage = "/NDIS-and-the-Healing-Power-of-Remedial-Massage-and-Myotherapy.jpg"; // Using image from /public/
+  const decorativeImage = "/side-view-people-working-office.jpg"; // Using image from /public/
 
   const alliedHealthServices = [
     // ... (same alliedHealthServices array as before) ...
@@ -21,45 +21,45 @@ export default function AlliedHealthServicesPageClient() {
       id: 1,
       title: "Physiotherapy",
       shortDescription: "Physical therapy to improve movement, function, and quality of life.",
-      longDescription: "Our Physiotherapy services help improve your movement, function, and quality of life...",
+      longDescription: "Our Physiotherapy services help improve your movement, function, and quality of life through targeted exercises, manual therapy, and education.", // Expanded description
       icon: "💪",
-      image: "/NDIS-and-the-Healing-Power-of-Remedial-Massage-and-Myotherapy.jpg",
+      image: "/icons/4232156.jpg", // Updated path
       color: "#39A9E0"
     },
     {
       id: 2,
       title: "Behaviour Support",
       shortDescription: "Professional support to address behavioral challenges and develop positive strategies.",
-      longDescription: "Our Behaviour Support services help individuals who may display behaviors of concern...",
+      longDescription: "Our Behaviour Support services help individuals who may display behaviors of concern by developing positive strategies and support plans.", // Expanded description
       icon: "🧠",
-      image: "/psychology-support-person-wheelchair-woman-600nw-2167530617.webp",
+      image: "/icons/5018555.jpg", // Updated path (already an icon)
       color: "#8BC53F"
     },
     {
       id: 3,
       title: "Psychology",
       shortDescription: "Mental health support for emotional well-being and psychological resilience.",
-      longDescription: "Our Psychology services provide professional mental health support...",
+      longDescription: "Our Psychology services provide professional mental health support, counseling, and therapy to improve emotional well-being and resilience.", // Expanded description
       icon: "🧩",
-      image: "/side-view-people-working-office.jpg",
+      image: "/icons/6276064.jpg", 
       color: "#39A9E0"
     },
     {
       id: 4,
       title: "Rehabilitation Counsellor",
       shortDescription: "Guidance and support for individuals recovering from injury or managing disability.",
-      longDescription: "Our Rehabilitation Counselling services provide guidance and support...",
+      longDescription: "Our Rehabilitation Counselling services provide guidance and support to help individuals return to work or daily life after injury or disability.", // Expanded description
       icon: "🤲",
-      image: "/pwd-support.png",
+      image: "/icons/6974035.jpg",
       color: "#8BC53F"
     },
     {
       id: 5,
       title: "Dietitian",
       shortDescription: "Expert nutrition advice tailored to individual health needs and goals.",
-      longDescription: "Our Dietitian services provide expert nutrition advice...",
+      longDescription: "Our Dietitian services provide expert nutrition advice and personalized meal plans to support your health goals and manage dietary needs.", // Expanded description
       icon: "🥗",
-      image: "/AdobeStock_423741997-scaled-1.jpeg",
+      image: "/icons/7985393.jpg", 
       color: "#39A9E0"
     }
   ];
@@ -69,12 +69,13 @@ export default function AlliedHealthServicesPageClient() {
       {/* New Hero Section */}
       <section className="relative bg-[#39A9E0] text-white overflow-hidden py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center text-center gap-8">
             {/* Left Column: Text */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
                 {title}
@@ -82,43 +83,16 @@ export default function AlliedHealthServicesPageClient() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-6 md:mb-8">
                 {subtitle}
               </h2>
-              <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-xl text-white/90">
+              <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
               <Link 
-                href="/contact-us#form" // Link to form section maybe?
+                href="/contact-us#form"
                 className="inline-flex items-center bg-white text-[#39A9E0] hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 text-base md:text-lg w-fit"
               >
                 <span>Enquire Now</span>
                 <FaArrowRight className="ml-2 text-sm" />
               </Link>
-            </motion.div>
-            
-            {/* Right Column: Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[350px] md:h-[450px] hidden lg:block"
-            >
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-300/20 rounded-full -z-10"></div>
-              <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-                 animate={{ opacity: 1, scale: 1, rotate: -3 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="absolute top-0 left-0 w-80 h-64 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={heroImage} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 0vw, 320px"/>
-              </motion.div>
-              <motion.div
-                 initial={{ opacity: 0, scale: 0.8, rotate: 12 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 6 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="absolute bottom-0 right-0 w-64 h-48 rounded-lg shadow-xl overflow-hidden"
-              >
-                <Image src={decorativeImage} alt="Health support" fill className="object-cover" sizes="(max-width: 1024px) 0vw, 256px"/>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -142,25 +116,36 @@ export default function AlliedHealthServicesPageClient() {
         </section>
       </AnimatedSection>
 
-      {/* Services Overview (gray bg) */}
+      {/* Services Overview (gray bg) - Rebuilt with alternating layout */}
       <section className="py-16 bg-gray-50">
-        {/* ... services overview content ... */}
-         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto px-4">
+          <div className="space-y-16"> {/* Add spacing between service blocks */}
             {alliedHealthServices.map((service, index) => (
-              <AnimatedSection key={service.id} variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} delay={0.1} className="mb-16 last:mb-0">
-                <div id={service.title.toLowerCase().replace(/\s+/g, '-')} className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                   <div className={`relative h-64 md:h-auto rounded-lg overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}><Image src={service.image} alt={service.title} fill className="object-cover"/></div>
-                    <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                      <div className="flex items-center mb-4"><span className="text-3xl mr-4">{service.icon}</span><h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3></div>
-                      <p className="text-gray-600 mb-6">{service.longDescription}</p>
-                      <Link 
-                        href="/contact-us#contact-form"
-                        className="inline-flex items-center font-medium" 
-                        style={{ color: service.color }}>
-                          Inquire About This Service <FaArrowRight className="ml-2" />
-                      </Link>
+              <AnimatedSection key={service.id} variantType={index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight'} delay={0.1}>
+                <div 
+                  id={service.title.toLowerCase().replace(/\s+/g, '-')}
+                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Image Column */}
+                  <div className="w-full md:w-1/2 flex-shrink-0">
+                    <div className={`relative aspect-video rounded-lg overflow-hidden mx-auto max-w-lg md:max-w-none`}>
+                      <Image src={service.image} alt={service.title} fill className="object-contain"/>
                     </div>
+                  </div>
+                  {/* Text Column */}
+                  <div className="w-full md:w-1/2 text-center md:text-left">
+                    <div className="inline-flex items-center justify-center md:justify-start mb-4">
+                      <span className="text-3xl mr-4">{service.icon}</span>
+                      <h3 className="text-2xl font-bold" style={{ color: service.color }}>{service.title}</h3>
+                    </div>
+                    <p className="text-gray-600 mb-6 mx-auto md:mx-0 max-w-md">{service.longDescription}</p>
+                    <Link 
+                      href="/contact-us#contact-form"
+                      className="inline-flex items-center font-medium"
+                      style={{ color: service.color }}>
+                        Inquire About This Service <FaArrowRight className="ml-2" />
+                    </Link>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -190,7 +175,7 @@ export default function AlliedHealthServicesPageClient() {
       <AnimatedSection variantType="fadeInUp">
         <section className="py-12 relative overflow-hidden">
           {/* ... CTA content ... */}
-           <div className="absolute inset-0"><Image src="/pwd-support.png" alt="Contact Vitality Community Care about Allied Health Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Access Our Allied Health Services?</h2> <p className="text-lg mb-8">Contact us today to discuss how our allied health professionals can support...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
+           <div className="absolute inset-0"><Image src="/icons/pwd-support.png" alt="Contact Vitality Community Care about Allied Health Services" fill className="object-cover opacity-20"/> <div className="absolute inset-0 bg-gradient-to-r from-[#39A9E0]/90 to-[#8BC53F]/90"></div></div> <div className="container mx-auto px-4 relative z-10"><div className="max-w-4xl mx-auto text-center text-white"><h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Access Our Allied Health Services?</h2> <p className="text-lg mb-8">Contact us today to discuss how our allied health professionals can support...</p> <div className="flex flex-col sm:flex-row justify-center gap-4"><Link href="/contact-us" className="bg-white text-[#39A9E0] hover:bg-blue-50 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Contact Us <FaArrowRight className="ml-2" /></Link> <Link href="/referral" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#8BC53F] font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 flex items-center justify-center">Make a Referral <FaArrowRight className="ml-2" /></Link></div></div></div>
         </section>
       </AnimatedSection>
 
