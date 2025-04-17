@@ -41,13 +41,7 @@ export default function ReferralPageClient() {
               <p className="text-lg md:text-xl mb-8 md:mb-10 text-white/90">
                 {description}
               </p>
-              <a 
-                href="#referral-form-section" // Link to form section on this page
-                className="inline-flex items-center bg-white text-[#39A9E0] hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow-lg transition duration-300 hover:-translate-y-1 text-base md:text-lg w-fit"
-              >
-                <span>Go to Referral Form</span>
-                <FaArrowRight className="ml-2 text-sm" />
-              </a>
+
             </motion.div>
           </div>
         </div>
