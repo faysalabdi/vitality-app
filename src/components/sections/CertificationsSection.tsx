@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -11,26 +12,22 @@ export const CertificationsSection = () => {
     {
       id: 1,
       name: 'AHPRA',
-      image: '/ndis.webp',
-      description: 'Australian Health Practitioner Regulation Agency'
+      image: '/Aphra.webp'
     },
     {
       id: 2,
       name: 'Medicare',
-      image: '/ndis.webp',
-      description: 'Medicare Registered Provider'
+      image: '/Medicare.webp'
     },
     {
       id: 3,
-      name: 'NDIS',
-      image: '/ndis.webp',
-      description: 'Registered NDIS Provider'
+      name: 'NDIS Quality and Safeguards Commission',
+      image: '/NDIS-Certified-Vitality-NDIS.webp'
     },
     {
       id: 4,
-      name: 'NDIS Certified',
-      image: '/ndis.webp',
-      description: 'NDIS Quality and Safeguards Certified'
+      name: 'Registered NDIS Provider',
+      image: '/Registered-NDIS-Provider.webp'
     }
   ];
 
@@ -65,18 +62,16 @@ export const CertificationsSection = () => {
                   {certifications.map((item, index) => (
                     <div
                       key={index}
-                      className={`w-48 h-48 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2`}
+                      className="w-48 h-48 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2"
                     >
-                      <div className="h-full flex flex-col items-center justify-center text-center">
+                      <div className="h-full flex items-center justify-center">
                         <Image
                           src={item.image}
                           alt={item.name}
-                          width={100}
+                          width={200}
                           height={100}
-                          className="mb-4"
+                          className="object-contain"
                         />
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">{item.name}</h3>
-                        <p className="text-sm text-gray-600">{item.description}</p>
                       </div>
                     </div>
                   ))}
@@ -84,7 +79,7 @@ export const CertificationsSection = () => {
               </div>
             ))}
           </div>
-          </div>
+        </div>
       </div>
     </section>
   );
