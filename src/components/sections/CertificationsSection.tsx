@@ -1,11 +1,11 @@
-
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export const CertificationsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const certifications = [
     {
@@ -35,11 +35,15 @@ export const CertificationsSection = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % certifications.length);
-    }, 3000);
+    const animate = () => {
+      setTranslateX(prev => {
+        const newValue = prev - 0.5;
+        return newValue <= -100 * (certifications.length -1) ? 0 : newValue;
+      });
+    };
 
-    return () => clearInterval(interval);
+    const animation = setInterval(animate, 50);
+    return () => clearInterval(animation);
   }, []);
 
   return (
@@ -48,8 +52,9 @@ export const CertificationsSection = () => {
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Certifications & Accreditations</h2>
         <div className="relative overflow-hidden">
           <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            ref={containerRef}
+            className="flex transition-transform duration-100 ease-linear"
+            style={{ transform: `translateX(${translateX}%)` }}
           >
             {certifications.map((cert) => (
               <div 
@@ -60,8 +65,7 @@ export const CertificationsSection = () => {
                   {certifications.map((item, index) => (
                     <div
                       key={index}
-                      className={`w-48 h-48 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2
-                        ${index === currentIndex ? 'scale-105' : 'scale-95 opacity-70'}`}
+                      className={`w-48 h-48 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2`}
                     >
                       <div className="h-full flex flex-col items-center justify-center text-center">
                         <Image
@@ -80,17 +84,7 @@ export const CertificationsSection = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-8 gap-2">
-            {certifications.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 
-                  ${index === currentIndex ? 'bg-blue-500 w-6' : 'bg-gray-300'}`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
           </div>
-        </div>
       </div>
     </section>
   );
