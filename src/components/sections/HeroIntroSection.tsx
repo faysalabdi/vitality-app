@@ -22,10 +22,9 @@ export const HeroIntroSection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-[#39A9E0]">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-[#39A9E0]">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

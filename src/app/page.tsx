@@ -32,10 +32,8 @@ export default function Home() {
     <>
       <LocalBusinessStructuredData />
       <HeroIntroSection />
-      <QuickNav />
-      <div className="container mx-auto px-4 py-12">
-        <StatsCounter />
-        <BenefitsSection />
+      <StatsCounter />
+      <BenefitsSection />
       <OurApproachSection />
 
       <Testimonials />
