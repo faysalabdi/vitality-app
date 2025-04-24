@@ -62,17 +62,15 @@ export const CertificationsSection = () => {
                   {certifications.map((item, index) => (
                     <div
                       key={index}
-                      className="w-48 h-48 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2"
+                      className="w-48 h-48 flex items-center justify-center"
                     >
-                      <div className="h-full flex items-center justify-center">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          width={200}
-                          height={100}
-                          className="object-contain"
-                        />
-                      </div>
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={200}
+                        height={100}
+                        className="object-contain"
+                      />
                     </div>
                   ))}
                 </div>
